@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<style type="text/css">
+  code
+  {
+    color: blue;
+    font-size: 14px;
+    white-space: pre;
+    border-radius: 3px;
+    font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+    padding: 2px 4px;
+    background-color: #f7f7f9;
+    border: 1px solid #e1e1e8;
+  }
+
+  pre.sourceCode
+  {
+    margin-left: 3em;
+    padding: 0.5em;
+
+    border: 0.1em green solid !important;
+
+  }
+</style>
+
+<h1 id="osztott-rendszerek-nappali-tagozat-2016.06.03.-1000-1400">Osztott rendszerek (nappali tagozat), 2016.06.03. 10:00-14:00</h1>
+<h3 id="feltételek">Feltételek</h3>
+<ul>
+<li><p>A ZH megoldása során <strong>tilos</strong> más ember (kivéve a felügyelő gyakorlatvezetők) segítségét bármilyen módon kérni, együttműködni, vagy segítséget adni.</p></li>
+<li><p>Használható eszközök:</p>
+<ul>
+<li><p><a href="https://bead.inf.elte.hu/files/java/api/">Java API dokumentáció</a></p></li>
+<li><p>a <a href="https://bead.inf.elte.hu">BE-AD</a>-ba eddig feltöltött megoldások</p></li>
+<li><p>Mészáros Mónika gyakorlatvezető <a href="http://people.inf.elte.hu/bonnie/or_gy_1516_2.html">weboldala</a> és az oda feltöltött anyagok</p></li>
+<li><p>Kőszegi Judit gyakorlatvezető <a href="http://koszegijudit.web.elte.hu/or15162">weboldala</a> és az oda feltöltött anyagok</p></li>
+</ul></li>
+</ul>
+<h3 id="az-elkészítendő-megoldásról">Az elkészítendő megoldásról</h3>
+<ul>
+<li><p>A kettesért az alapfeladatot kell megoldani, minden további jegyért egy választható feladatot kell megoldani.</p></li>
+<li><p>A választható feladat megoldásához az alapfeladatot kell bővíteni. Ehhez másold át az alapfeladat megoldását a megfelelő csomagba (pl. a <code>zh20160603.alapfeladat</code> csomagból a <code>zh20160603.feladatA</code> csomagba), és alakítsd át/bővítsd a megoldást a leírás szerint.</p></li>
+</ul>
+<h3 id="beadás">Beadás</h3>
+<p>A ZH végén a megoldást töltsd fel a BE-AD rendszerbe.</p>
+<h3 id="tesztelés">Tesztelés</h3>
+<p>Az alapfeladathoz elérhető egy egyszerű tesztfájl, bemeneti fájlok és minta kimenet <a href="http://koszegijudit.web.elte.hu/or/15162/gyakUV.zip">itt</a>. Fejlesztőkörnyezetben dolgozva a <code>Teszt.jar</code> fájlt a projekthez hozzá kell adni, majd a jar-ban lévő <code>zh20160603.alapfeladat.Teszt</code> nevű főosztályt futtatni.</p>
+<p>Parancssorból a futtatás a lefordított osztályokat tartalmazó legkülső csomag mappájának gyökerében állva a következő:</p>
+<ul>
+<li><p>Windows: <code>java -cp .;&lt;path-to-jar&gt;/Teszt.jar zh20160603.alapfeladat.Teszt</code></p></li>
+<li><p>Linux: <code>java -cp .:&lt;path-to-jar&gt;/Teszt.jar zh20160603.alapfeladat.Teszt</code></p></li>
+</ul>
+<p>Akkor fog jól működni a tesztelő, ha a csomag - és osztálynevek, valamint a várakozási idők is a feladatleírásnak megfelelőek. <em>Megjegyzés</em>: a futtatás során a standard outputon megjelenő elvárt minta-kimenethez képest (<code>out.txt</code>) a valós futáskor az egyes sorok kis mértékben felcserélődhetnek a többszálú futtatás nemdeterminisztikussága miatt, de a sorokban lévő tartalmaknak egyezőnek kell lennie.</p>
+<h2 id="elégséges-távoli-metódushívás">Elégséges: távoli metódushívás</h2>
+<p>Készíts egy alkalmazást, amellyel leegyszerűsített lottójátékot lehet szimulálni. Egy távolról hívható objektum metódusai implementálják a sorsolást és a tippelést. Kétféle kliens fogja igénybe venni a szolgáltatásait: az emberek eljárnak a lottózóba játszani, kifizetik a díjat és felvehetik a nyereményt, a másik fajta kliens pedig bizonyos időközönként sorsolást kezdeményez.</p>
+<p>A lottózás több szempontból is rendhagyó:</p>
+<ul>
+<li><p>Csak 5-ös lottót lehet játszani.</p></li>
+<li><p>A játék díjának befizetéséhez és a nyereményhez egy speciális valutát, a petákot fogjuk használni.</p></li>
+<li><p>Nyereményt 2-es találat után lehet kapni, találati számtól függően fix összeget.</p></li>
+<li><p>A nyerőszámok mindig titkosak, és már a tippek megtétele időpontjában ki vannak sorsolva. Így ha valaki játszik, azonnal meg is kapja a nyereményét, amennyiben az aktuálisan nyerőszámokból legalább kettőt eltalált. Ellenkező esetben csak befizeti a játék díját.</p></li>
+</ul>
+<h3 id="lottózó">Lottózó</h3>
+<p>Készítsd el a <code>zh20160603.alapfeladat.Lottozo</code> osztályt, amely tartalmazzon főprogramot.</p>
+<p>A program a <code>8899</code> porton indítson el egy névszolgáltatást (<code>registry</code>), amelybe jegyezzen be <code>&quot;lottozo&quot;</code> néven egy távoli objektumot.</p>
+<p>Az első parancssori argumentumban megadott pozitív egész szám a lottózó kasszájában lévő kezdőösszeg. Ezt a számot lehessen megadni a távolról hívható objektum konstruktorában. A konstruktorban hozz létre és tárolj el egy random generátort is a következő utasítással: <code>new Random(123456);</code>. A későbbiekben mindig ezen objektum <code>nextInt</code> metódusával sorsold a random számokat. Így minden egyes futásnál ugyanazokat a számokat fogjuk megkapni, és a minta kimenettel is így lesz összehasonlítható az eredmény.</p>
+<p>Az objektumon bejegyzés után legyenek elérhetőek a következő műveletek:</p>
+<ul>
+<li><p><code>void sorsol()</code>: sorsol <code>5</code> <strong>különböző</strong> nyerőszámot <code>1</code> és <code>90</code> között. Ezek lesznek innentől kezdve az aktuális nyerőszámok (kezdetben, amíg senki nem hívta meg a metódust, nem kell nyerőszámokat sorsolni). A sorsolás után írja ki a nyerőszámokat a standard outputra, ehhez hasonló formátumban: <code>&quot;L &gt; sorsolas: [11, 22, 33, 44, 55]&quot;</code></p></li>
+<li><p><code>int jatszik(Set&lt;Integer&gt; szamok)</code>: feltehetjük, hogy a paraméterben szabályos tipp érkezik (nem kell ellenőrizni), tehát egy <code>5</code> db, <code>1</code> és <code>90</code> közötti, egész számokat tartalmazó halmaz. Azt is feltételezhetjük, hogy a metódus hívása előtt valaki már legalább egyszer meghívta a <code>sorsol()</code> metódust.</p>
+<p>A függvény visszatérési értékében a játék díját vagy a díj levonása utáni nyereményt adjuk vissza. Ennek számítása a következő:</p>
+<ul>
+<li><p>A játék díja mindig <code>2</code> peták.</p></li>
+<li><p>Nyeremény minimum 2-es találat után jár, a nyeremény összege: <code>&lt;a találatok száma&gt;*5</code></p></li>
+</ul>
+<p>A lottózó kasszájában lévő pénz is változik a kiszámított összegnek megfelelően. Amennyiben a kasszában lévő összeg elérné a <code>0</code>-át, vagy az alá csökkenne, a lottózó csődbe megy (lásd később).</p>
+<p><em>Példák</em> a <code>sorsol()</code> metódusnál szereplő aktuális nyerőszámok esetén:</p>
+<ul>
+<li><p>A tipp: <code>[1, 2, 3, 4, 5]</code>, a <code>jatszik()</code> metódus visszatérési értéke <code>-2</code>, hiszen be kell fizetnie a játék díját (<code>0</code> találata volt). A lottózó kasszájában lévő pénz összege <code>2</code>-vel nő.</p></li>
+<li><p>A tipp: <code>[11, 2, 3, 4, 5]</code>, a <code>jatszik()</code> metódus visszatérési értéke <code>-2</code>, hiszen be kell fizetnie a játék díját (<code>1</code> találata volt). A lottózó kasszájában lévő pénz összege <code>2</code>-vel nő.</p></li>
+<li><p>A tipp: <code>[11, 22, 3, 4, 55]</code>, a <code>jatszik()</code> metódus visszatérési értéke <code>13</code>, a nyereménye <code>3*5=15</code> (<code>3</code> találata volt) és be kell fizetnie a játék díját. A lottózó kasszájában lévő pénz összege <code>13</code>-mal csökken.</p></li>
+</ul>
+<p><em>Kiírás a standard outputra:</em> minden beérkező tipp esetén írjuk ki a beérkező tippet, a kiszámolt összeget, és a kasszában lévő új pénzmennyiséget a következő példának megfelelő formátumban: <code>&quot;L &gt; tipp: [1,2,3,4,5]; kifizetes: -2; uj kassza: 52&quot;</code></p>
+<p><em>A lottózó csődje:</em> amennyiben egy kifizetés miatt a lottózó kasszájában lévő összeg <code>0</code> vagy negatív lesz, a lottózó csődbe megy. A lottózót reprezentáló távoli objektum továbbra is legyen elérhető, de mind a <code>sorsol</code>, mind pedig a <code>jatszik</code> metódus már ne csináljon semmit, hanem egy <code>UnsupportedOperationException</code> típusú kivételt dobjon. Az a <code>jatszik</code> metódus hívás is dobja már a kivételt, aminek hatására a csőd bekövetkezett.</p></li>
+</ul>
+<h3 id="sorsoló">Sorsoló</h3>
+<p>Készítsd el a <code>zh20160603.alapfeladat.Sorsolo</code> osztályt, amely tartalmazzon főprogramot. A program kapcsolódjon össze a távolról hívható <code>lottozo</code> objektummal, majd <code>1</code> másodpercenként sorsoltasson új nyerőszámokat. Induláskor rögtön sorsoltasson, és csak utána várakozzon <code>1</code> másodpercet. Amennyiben a távoli metódus <code>UnsupportedOperationException</code> típusú kivételt dob, álljon le a program.</p>
+<h3 id="ember">Ember</h3>
+<p>Készítsd el a <code>zh20160603.alapfeladat.Ember</code> osztályt, amely tartalmazzon főprogramot. A program parancssori paraméterei a következők (ilyen sorrendben; nem kell ellenőrizni): - az ember neve - az ember pénze (egész számmá alakítható) - a tippjeit tartalmazó fájlnév</p>
+<p>A program kapcsolódjon össze a távolról hívható <code>lottozo</code> objektummal, majd a következő lépéseket hajtsa végre ez ember:</p>
+<ul>
+<li><p>Amennyiben nincs annyi pénze, hogy minimum egy játékot ki tudna fizetni (<code>&lt;2</code>), írja ki az <code>&quot;E1&gt; A lottozas befejezodott, mert elfogyott a penzem.&quot;</code> szöveget (ahol <code>E1</code> helyére az ember neve kerül), majd álljon le.</p></li>
+<li><p>Amennyiben még van annyi pénze, hogy minimum egy játékot ki tud fizetni (<code>&gt;=2</code>):</p>
+<ul>
+<li><p>Olvassa be a következő <code>5</code> egész számot a fájlból (a fájl soronként 5 számot tartalmaz, lásd: minta bemenetek), és küldje el tippként a lottózónak.</p></li>
+<li><p>Ha nem érkezett kivétel, akkor a visszatérési értékben kapott számot adja hozzá a nála lévő pénzhez (ha díjat kell fizetnie, az visszatérési érték <code>-2</code> lesz, tehát csökkenni fog a pénze, ellenkező esetben nőni).</p></li>
+<li><p>Írja ki a standard outputra az ember nevét, a küldött tippet, a kapott választ és a nála lévő új pénzösszeget a következő példának megfelelő formátumban: <code>&quot;E1&gt; tipp: [1,2,3,4,5]; kifizetes: -2; penzem: 8&quot;</code></p></li>
+<li><p>Várakozzon <code>1</code> másodpercet, majd kezdje a lépéseket elölről.</p></li>
+<li><p>Amennyiben a távoli metódus <code>UnsupportedOperationException</code> típusú kivételt dob, írja ki a <code>&quot;E1&gt; A lottozas befejezodott, mert a lottozo csodbe ment.&quot;</code> szöveget (ahol <code>E1</code> helyére az ember neve kerül), majd álljon le.</p></li>
+</ul></li>
+</ul>
+<h2 id="a-párhuzamosság">A: Párhuzamosság</h2>
+<p>Készítsd el a Teszt.jar-ban lévő főosztály működésének megfelelő <code>zh20160603.feladatA.Teszt</code> osztályt:</p>
+<ol style="list-style-type: decimal">
+<li><p>Elindítja a lottózót <code>50</code> petákos kezdeti kasszával egy külön szálban.</p></li>
+<li><p>Vár <code>1</code> másodpercet.</p></li>
+<li><p>Elindít egy sorolót egy külön szálban.</p></li>
+<li><p>Vár <code>0.5</code> másodpercet.</p></li>
+<li>Elindít 6 embert 1-1 külön szálban, ahol az <code>i.</code> ember a következő paraméterekkel rendelkezik:</li>
+</ol>
+<ul>
+<li>név: <code>E&lt;i&gt;</code></li>
+<li>pénz: <code>i * 10</code></li>
+<li><p>fájl: ha <code>i</code> páros <code>szamok1.txt</code>; ha <code>i</code> pártalan <code>szamok2.txt</code></p>
+<p>A szálak indítása között várjon <code>0.3</code> másodpercet.</p></li>
+</ul>
+<h2 id="b-socketek">B: Socketek</h2>
+<p>Valósítsd meg az alapfeladatban lévő funkcionalitásokat socketekkel, a szerver és a két kliens osztály a <code>zh20160603.feladatB</code> csomagba kerüljön. Az kommunikációban használt üzenetek tartalma és formátuma nem kötött.</p>
+<h2 id="c-adatbázis-kezelés">C: Adatbázis-kezelés</h2>
+<p>Egészítsd ki a lottózó <code>jatszik</code> metódusát egy paraméterrel, amelyben meg lehet adni a tippet leadó ember nevét. A szerver egy adatbázis táblában vezesse, hogy az adott nevű tippelőnek hányszor volt már legalább 2-es találata. A lottózó indulásakor mindig írja ki annak a játékosnak a nevét, akinek a legtöbbször volt már legalább 2-ese. Ha több ilyen is van, akármelyik nevet ki lehet írni.</p>
+</body>
+</html>

@@ -1,0 +1,61 @@
+10. Gyakorlat
+1. Készíts egy szerver-kliens alkalmazást socketekkel.
+
+Kliens:
+
+parancssori paraméterként vár egy nevet, ezt használja majd az azonosítására
+csatlakozik a szerverhez, majd elküldi neki a nevét
+ezután a szervertől kap egy számot. A kapott számból kivon egyet és az eredményt visszaküldi a szervernek.
+ha az eredmény kisebb, mint 0, akkor kiesett a játékból. Írja ki a képernyőre, hogy kiesett
+ha a szervertől a "Nyertel" üzenetet kapta, akkor ő nyert. Írja ki a képernyőre, hogy nyert
+Szerver:
+
+minden 3 kliens csatlakozása után indítson el egy játékmenetet.
+olvassa be a kliensek nevét, majd sorsoljon egy egész számot 10 és 20 között, ezt írja ki a képernyőre.
+a 3 közül elsőként csatlakozott kliensek küldje el a számot, majd a tőle kapott választ küldje el a következő kliensnek. És így tovább, körbe-körbe közvetítse az üzenetet.
+ha valamelyik klienstől kapott szám kisebb, mint 0, akkor az a kliens kiesett. Ekkor írja ki a képernyőre, hogy "<Játékos neve> kiesett". Sorsoljon egy új számot 10 és 20 között és a következő játékosnak már ezt küldje tovább. A kiesett játékos nem vesz részt a további üzenetküldésben.
+A játék véget ér, ha már csak 1 kliens marad játékban. Ekkor küldje el neki a "Nyertel" üzenetet és írja ki a képernyőre a nyertes játékos nevét
+Hozz létre egy osztályt, ami elindítja a szervert és 6 db klienst (a szervert és a kienseket is külön szálakon).
+
+2. Készíts egy RMI alkalmazást!
+  A program az 12345 porton indítson el egy névszolgáltatást (registry), amibe jegyezzen be "adatb" néven egy távoli objektumot. Az interface neve legyen AdatbInterface!
+A következő művelet legyen elérhető az objektumon:
+    - int nextNumber(): visszaad egy számot 1 és 10 között. A véletlenszám generáláshoz vegyél fel egy Random típusú adattagot az osztályba és állítsd be a seed-jét 11111-re (pl.: private Random rand = new Random(11111))
+
+  A kliens hozzon létre egy adatbázist, benne egy táblát. A tábla neve legyen SZAMOK. Két mezőt tartalmazzon, egy SZAM nevűt (típusa int) és egy DB nevűt (típusa int). A SZAM jelöli az adott számot, a DB pedig, hogy a távoli objektum hányszor sorsolta azt a számot.
+  Töltsd fel a táblát 1-től 10-ig a számokkal úgy, hogy kezdetben a DB mindenhol 0 legyen (insert).        
+
+  A kliens (AdatbClient) 15 alkalommal hívja meg a távoli objektum nextNumber() metódusát. Minden alkalommal a táblában növelje meg az ahhoz a számhoz tartozó DB mező értékét eggyel (update), amelyik számot a metódus megadta.
+  Ha véget értek az iterációk, írd ki a tábla tartalmát (select). Ezután töröld ki a táblából azokat a sorokat, amilyen szám egyszer sem lett kisorsolva (delete), majd írd ki újra a tábla tartalmát.
+
+3. Készíts egy RMI alkalmazást.
+
+Készíts el négy osztályt: a Level osztály példányai reprezentálnak 1-1 megcímzett levelet; a Posta felelős a levelek átvételéért és továbbításáért; a Felado reprezentálja a postát felkereső embereket, akik levelet szeretnének feladni; valamint egy-egy Postas képes elszállítani a leveleket a postáról. Az alapfeladatban postából egyet indítunk, feladóból és postásból akár többet is.
+
+Level
+a következő tulajdonságokkal rendelkezik:
+címzett neve (String)
+cím (String)
+irányítószám (int)
+rendelkezzen olyan toString metódussal, amiben mind a 3 adat megjelenik
+Posta
+Parancssori argumentumként egy egész számot kap: ez jelenti egy levél feladásának az árát
+Egy RMI szervert jegyez be a programon belülről, a 9000-es porton létrehozott registry-be "posta" néven. Az alábbi szolgáltatások érhetők el:
+int felad(Level l): a paraméterként átadott levelet átveszi a posta és eltárolja. A visszatérési értékben megadja az adott levél árát.
+List<Level> elszallit(byte irSzamKezdet, int taskameret): egy postás érkezett, akinek átadja a posta az elszállítandó leveleket a következők szerint:
+Csak az első paraméterben megadott számjeggyel kezdődő irányítószámmal rendelkező leveleket viszi el a postás.
+Maximum a második paraméterben megadott számú levelet tud elvinni a postás.
+A levelek olyan sorrendben kerülnek kiszállításra, ahogyan érkeztek, tehát a legrégebben a postán lévőt szállítja el a postás először.
+A visszatérési érték az elszállítandó leveleket tartalmazza a fent megadott sorrendben; a postán lévő levelek közül az elszállított levelek törlődnek.
+Felado
+Parancssori argumentumként egy 1 és 100 közötti azonosítót (id) kap. Felkeresi a postát 2 másodpercenként 9 alkalommal és minden i. körben a következő tartalmú levelet adja fel:
+
+címzett neve: "cimzett" + id
+cím: "cim" + id
+irányítószám: i * 1000 + id
+Minden körben írja ki, hogy milyen levelet adott fel, és hogy mennyit kellett érte fizetnie.
+
+Postas
+Az első parancssori argumentuma egy számjegy, ami azt jelzi, hogy milyen számjeggyel kezdődő leveleket fog ő szállítani; második argumentum pedig egy egész szám, ami a postás táskamérete (maximum mennyi levelet tud elszállítani).
+
+A postás 1 és 5 közötti random másodpercenként keresse fel a postát, és kérje el az ő paramétereinek megfelelő elszállítandó leveleket. A standard outputra írja ki minden alkalommal, hogy éppen mely leveleket kapta meg a postáról.

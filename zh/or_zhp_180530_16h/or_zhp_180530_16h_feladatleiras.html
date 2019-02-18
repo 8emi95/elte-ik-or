@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)https://bead.inf.elte.hu/submission?asg-key=177 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>BE-AD Assignment Management System</title><link rel="shortcut icon" href="https://bead.inf.elte.hu/icon.ico"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content=""><meta name="author" content=""><script src="./BE-AD Assignment Management System_files/jquery.js.download"></script><link type="text/css" href="./BE-AD Assignment Management System_files/jquery-ui.css" rel="stylesheet"><script src="./BE-AD Assignment Management System_files/jquery-ui.js.download"></script><script src="./BE-AD Assignment Management System_files/moment.js.download"></script><link type="text/css" href="./BE-AD Assignment Management System_files/bootstrap.min.css" rel="stylesheet"><link type="text/css" href="./BE-AD Assignment Management System_files/bootstrap.custombutton.css" rel="stylesheet"><script src="./BE-AD Assignment Management System_files/bootstrap.min.js.download"></script><link type="text/css" href="./BE-AD Assignment Management System_files/bootstrap-datetimepicker.min.css" rel="stylesheet"><script src="./BE-AD Assignment Management System_files/bootstrap-datetimepicker.min.js.download"></script><script src="./BE-AD Assignment Management System_files/DynamicContents.js.download"></script><link type="text/css" href="./BE-AD Assignment Management System_files/katex.min.css" rel="stylesheet"><script src="./BE-AD Assignment Management System_files/katex.min.js.download"></script><script>window.onload = function(){ var mathElements = document.getElementsByClassName("math"); for (var i=0; i < mathElements.length; i++) { var texText = mathElements[i].firstChild; katex.render(texText.data, mathElements[i]); }}</script></head><body style=""><div class="navbar navbar-default navbar-fixed-top"><style>.body{padding-top:70px}</style><div class="container"><div class="navbar-header"></div></div></div><div class="container"><div class="row"><div class="col-md-12"><hr></div></div><div class="row"><div class="col-md-12"><div class="page-header"><h2>Submission</h2></div></div></div><div class="row"><div class="col-md-12"><table class="table table-bordered table-condensed table-hover table-striped"><tbody><tr><td><b>Course: </b></td><td>Osztott rendszerek (BSc)</td></tr><tr><td><b>Teacher: </b></td><td>Kitlei Robert Laszlo</td></tr><tr><td><b>Assignment: </b></td><td>Osztott ZH 2018.05.30. Első turnus 16:00</td></tr><tr><td><b>Deadline: </b></td><td>2018-05-30, 18:30:00</td></tr><tr><td><b>Time left: </b></td><td><a id="ctd">Deadline is reached</a><script>ctdcountdown();function ctdcountdown() {var minsecs = 60;var hoursecs = minsecs * 60;var daysecs = hoursecs* 24;var mstime = -785133 * 1000;var timestamp = new Date;var interval = setInterval(function() {var el = document.getElementById("ctd");var now = new Date;var dt = now - timestamp;timestamp = now;mstime = mstime - dt;var time = Math.round( mstime / 1000 );if(time < 0) {el.innerHTML = "Deadline is reached";clearInterval(interval);return;}var edays   = Math.floor( time / daysecs );var ehours1 = time % daysecs;var ehours  = Math.floor( ehours1 / hoursecs );if (ehours < 10) ehours = "0" + ehours;var emins1  = ehours1 % hoursecs;var emins   = Math.floor( emins1 / minsecs );if (emins < 10) emins = "0" + emins;var esecs   = emins1 % minsecs;if (esecs < 10) esecs = "0" + esecs;var text="";if(edays == 0) {if(ehours == 0) {text = emins + ':' + esecs;} else {text = ehours + ':' + emins + ':' + esecs;}} else {text = edays + " day(s) " + ehours + ':' + emins + ':' + esecs;}el.innerHTML = text;}, 1000);}</script></td></tr></tbody></table></div></div><div class="row"><div class="col-md-12"><div class="alert alert-danger"><p>Deadline is reached.</p></div></div></div><div class="row"><div class="col-md-12"><hr></div></div><div class="row"><div class="col-md-12"><div class="row"><div class="col-md-12"><p>There are no submissions.</p></div></div></div></div><div class="row"><div class="col-md-12"><h2>Description</h2><div style="margin-left:0px; background: lightgray"><h1 id="általános-tudnivalók">Általános tudnivalók</h1>
+<h2 id="a-zh-feltételei">A ZH feltételei</h2>
+<p>Általános feltételek:</p>
+<ul>
+<li>Amennyiben a megoldás fordítási hibát tartalmaz, nem fogadható el.</li>
+<li>Az alapfeladat megoldása elégségest ér, minden további feladat megoldása eggyel növeli az érdemjegyet. Az alapfeladat utáni feladatrészek tetszőleges sorrendben oldhatók meg.</li>
+<li>A feladatot önállóan kell megoldani, összedolgozás esetén <strong>egyik fél sem</strong> kap jegyet a tárgyból a félévben.
+<ul>
+<li>A ZH során <strong>nem lehet elöl</strong> mobiltelefon, pendrive stb.</li>
+</ul></li>
+</ul>
+<p>A kóddal kapcsolatban:</p>
+<ul>
+<li>A leírásban szereplő elnevezéseket pontosan kell követni, egyéb segédfüggvények/osztályok/adattagok igény szerint felvehetők.</li>
+<li>Kövesd a Java elnevezési konvencióit.</li>
+<li>Ha a leírás nem említi másként, feltehető, hogy a bemenet helyes (megfelelő számú és típusú adat érkezik, a kliens és a szerver követi a protokollt stb.), külön ellenőrzések nem szükségesek.</li>
+<li>Használható segédanyagok:
+<ul>
+<li><a href="https://bead.inf.elte.hu/files/java/api/index.html">Java dokumentáció</a></li>
+<li><a href="https://bead.inf.elte.hu/files/java/osztott-peldak.zip">a gyakorlatokon vett példák</a></li>
+<li>az adatbáziskezelő könyvtárak
+<ul>
+<li><a href="https://bead.inf.elte.hu/files/java/hsqldb-2.4.0.jar">hsqldb-2.4.0.jar</a></li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="a-beadás-menete">A beadás menete</h2>
+<ol style="list-style-type: decimal">
+<li>Ellenőrizd, hogy fordítási hibáktól mentes-e a kódod.</li>
+<li>A megoldást egyetlen <code>.zip</code> állományként töltsd fel a BE-AD rendszerbe.
+<ul>
+<li>Ha fejlesztőkörnyezetben készült a megoldás, a <code>.zip</code>-be a projektkönyvtárat kell betömöríteni.</li>
+<li>A fájl neve tetszőleges lehet.</li>
+</ul></li>
+<li>Kattints a jelszó mezőjére, hogy odakerüljön a kurzor.</li>
+<li>Hívd oda valamelyik segítőt, hogy beírja a jelszót.</li>
+</ol>
+<h1 id="alapfeladat">Alapfeladat</h1>
+<p>Készíts sportmérkőzések lebonyolítására egy szerver-kliens alkalmazást.</p>
+<ul>
+<li>Készíts egy <code>sport.Pont</code> típust, ami azt reprezentálja, ha egy csapat pontot szerzett. Tartalmazzon két adattagot: hányadik csapat (1, vagy 2) szerezte a pontot, és a játék hányadik másodpercében.</li>
+<li>Készíts egy <code>sport.Merkozes</code> típust, ami egy mérkőzést reprezentál: tartalmaz két csapatnevet (<code>String</code>ek), valamint a pontok listáját.</li>
+<li>Készíts egy <code>sport.Szerver</code> típust, ami egy futtatható Java osztály. A main függvény indítson egy szervert az első paranccsori paraméterként megadott porton, es várja egymás utáni kliensek csatlakozásat. A klienstől csatlakozás után előszőr két sort várjon. ami a két csapat nevét tartalmazza, majd ezután pontok sorozatát. A kliens a pontoknál csak azt küldi el, melyik csapat szerezte a pontot (szám formájában), az idő automatikusan számolódik az alapján, a kliens hány másodperce csatlakozott. A szerver nem küld válaszokat a kliensnek. A szerver jelenítse meg a standard kimeneten az aktuális mérkőzés információit minden változás után.</li>
+<li>Készíts egy <code>sport.Feljegyzo</code> nevű futtatható Java osztályt. A program kérjen be a felhasználótól a standard bemeneten két csapatnevet, majd sorok listáját a <code>"jatek_vege"</code> üzenetig. A sorok vagy 1-est, vagy 2-est, vagy a "jatek_vege" üzenetet tartalmazhatják.</li>
+</ul>
+<h1 id="rmi">RMI</h1>
+<ul>
+<li>A szerver vezessen egy statisztikát arról, melyik csapat hány pontot szerzett, a sport.stat.IStat interfész segítségével. Az interfész tartalmazzon egy gettert, amivel lekérdezhető egy csapat hány pontot szerzett eddig, egy settert, ami megnöveli az egyik csapat pontszámát eggyel, valamint egy gettert, ami a teljes listát visszaadja.</li>
+<li>A <code>sport.stat.Pontszamolo</code> osztály implementálja ezt az interface-t. A <code>Szerver</code> típus frissítse ezt az információt, miután egy szót hozzáadott.</li>
+<li>A szerver exportálja ezt az RMI szolgáltatást egy névjegyzékbe. A névjegyzéket a <code>9987</code> porton indítsd el.</li>
+<li>Készíts egy <code>sport.Toplista</code> uttatható Java osztályt, ami megjeleníti a három legtöbb pontot szerzett csapatot a standard kimeneten az RMI szolgáltatás segítségével.</li>
+</ul>
+<h1 id="párhuzamosság">Párhuzamosság</h1>
+<ul>
+<li>A szerver egyszerre több, független játékot is bonyolíthat, ha több kliens egyszerre csatlakozik.</li>
+<li>A szerver vezessen egy sorszámot a játékokhoz, amivel lehet rájuk hivatkozni.</li>
+<li>A szerverhez csatlakozhat egy bíró is (egyszerre csak egy), a második paranccsori paraméterként megkapott porton. Ennek a szerver részét a sport.BiroServer implementálja. A bíró soronként egy játék számát küldi a szervernek. A szerver válaszol elküldi hogy OK (ha van ilyen mérkőzés), vagy azt, hogy "ERROR", ha nincs olyan számú mérkőzés. Amennyiben ezt elküldte, abban a játékban szabálytalanság történt. A szabálytalanság azt jelenti, hogy abban a játékban a következő pontszerzést figyelmen kívül kell hagyni.</li>
+<li>Készítsd el az <code>sport.Biro</code> típust, ami egy futtatható Java osztály.
+<ul>
+<li>A main függvény kapcsolódjon a paranccsori paraméterekkel (host, port) megadott szerverhez, majd a standard bemeneten megkapott számokat (mérkőzésszámokat) küldje el a szervernek, és jelenítse meg annak válaszát.</li>
+</ul></li>
+<li>A megoldás legyen szálbiztos: egy rossz ütemezés ne okozhassa a program leállását vagy hibás működését!</li>
+</ul>
+<h1 id="adatbázis">Adatbázis</h1>
+<ul>
+<li>Tárold el adatbázisban a mérkőzéseket. Ehhez használj két táblát: Merkozes (id, csapat1, csapat2), valamint Pont (merkozes_id, csapat_sorszam)</li>
+<li>Az adatbázis műveleteket a <code>sport.Model</code> típusban található metódusok valósítsák meg.</li>
+<li>Amennyiben a tábla nem létezik, azt a modell típus automatikusan hozza létre.</li>
+<li>A szerver folyamatosan frissítse az adatbázisban található adatokat</li>
+<li>Készíts egy <code>ujsag.LegtobbPont</code> futtatható Java osztályt, ami megjeleníti a három legtöbb pontszerzést tartalmazó mérkőzést.</li>
+</ul></div></div></div><div class="row"><div class="col-md-12"><hr></div></div></div></body></html>

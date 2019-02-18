@@ -1,0 +1,33 @@
+5. Gyakorlat
+1. Készíts egy szerver-kliens alkalmazást, ahol a szerver egyszerre több kliens közötti kommunikációt is tud kezelni. A szerver minden 2 kliens csatlakozását követően indítson egy új szálat nekik (1 szálat összesen a 2 kliensnek), ami a kliensek közötti üzenetküldéseket fogja kezelni a következő módon:
+
+az elsőként csatlakozó kliensnek küldje el a "start" üzenetet
+a szerver továbbítsa a kapott szót a másik kliensnek,  majd fogadja a választ, azt is továbbítsa, stb.
+akkor álljon le az üzenetek küldözgetése, ha újra előállt az eredeti "start" szó. A szerver ezt a szót még küldje el a másik kliensnek.
+A kliens működése a következő:
+
+fölcseréli a kapott szó betűit (Collections.shuffle()), majd visszaküldi a szervernek
+ha egy kliens a "start" szót állítja elő, azt még küldje el, majd álljon le
+ha egy kliens a "start" szót fogadja (kivéve az első alkalommal), álljon le
+minden alkalommal írja ki a képernyőre a kapott és az elküldött szót
+Készíts egy főprogramot tartalmazó osztályt, ami elindít egy szervert és 6 db klienst.
+
+2. Módosítsd az előző feladatot annyival, hogy a szerver tartsa nyilván a leghosszabb (legtöbb üzenetküldésből álló) játékmenetet és mindegyik végén írja ki a képernyőre az aktuális játékmenet hosszát, iiletve az eddigi leghosszabbat. Ügyelj a párhuzamos hozzáférésből eredő problémákra!
+
+3. Hozz létre egy osztályt Bankszamla néven. Prancssori paraméterként várja s bankszámla kezdeti egyenlegét és a számla felhasználóinak számát. Többszálú szerver socket-ként fusson a 10121 porton.
+
+A kliensek csatlakozzanak a szerverhez, majd a következőket tegyék: 
+A következőt ismételd 5-ször:
+    - véletlenszerűen a felhasználó vegyen ki/rakjon be egy véletlenszerűen generált összeget a számlára (berak <összeg>, illetve kivesz <összeg> üzenetek küldésével)
+    - várjon 1-3 másodpercet, majd kezdje újra
+
+Minden tranzakciónál írd ki a tranzakció típusát, az összeget, illetve az őj egyenleget.
+Pl.: Kivesz, összeg: 533, uj egyenleg: 313    
+    
+A számla egyenlege soha nem lehet kevesebb, mint 0 Ft. Ha valaki többet szeretne kivenni, mint a
+számlaegyenleg, akkor a számlán levő teljes összeget vegye ki, de csak annyit. Ha üres számláról szeretne
+kivenni egy összeget, akkor továbbra is 0 marad a számlaegyenleg.
+
+Várd meg, míg az összes szál lefut, majd írd ki a képernyőre a következő üzenetet: "A program befejeződött".
+
+Készíts egy osztályt, ami elindítja a Bankszamla szervert és indít 3 klienst is.

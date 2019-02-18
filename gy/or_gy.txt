@@ -1,0 +1,38 @@
+180913
+01. OR GY
+
+Kitlei Róbert
+kitlei.web.elte.hu
+
+EA: 1 ZH
+GY: 1 BEAD + 1 ZH
+
+http://kitlei.web.elte.hu/segedanyagok/felev/2018-2019-osz/osztott/osztott-feladatok.html
+Bemelegítő feladatok 2.
+6. Az első parancssori paraméter egy szöveg, a többi paraméterpár pedig egy-egy karaktert tartalmaz. Cseréld le a szövegben a párok első felében szereplő karaktereket a másodikakra.
+
+****************************************************************************************************
+
+180927
+02. OR GY
+
+putty:
+localhost 12345 // fájlban
+raw
+never
+
+puffer: magyar
+buffer: angol
+
+cls // képernyőtörlés, mindig a képernyő tetején lesz
+javac Szerver.java && java Szerver
+javac Kliens.java && java Kliens
+
+ne Szerver Kliens legyen mindig a név, hanem AtlagoloSzerver, stb
+
+először szervert kell futtatni, utána klienst
+ctrl c: futó program lelövése
+
+holdpont/deadlock: egymásra vár a 2 oldal
+
+hasNextInt() blokkoló művelet???

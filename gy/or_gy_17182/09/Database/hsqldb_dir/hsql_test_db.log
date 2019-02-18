@@ -1,0 +1,9 @@
+/*C3*/SET SCHEMA PUBLIC
+drop table if exists people
+create table people (name varchar(80), birthyear int)
+INSERT INTO PEOPLE VALUES('Gandhi',1869)
+INSERT INTO PEOPLE VALUES('Turing',1912)
+INSERT INTO PEOPLE VALUES('Wittgenstein',1889)
+INSERT INTO PEOPLE VALUES('Frege',1848)
+COMMIT
+DISCONNECT

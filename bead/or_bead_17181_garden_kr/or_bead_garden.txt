@@ -1,0 +1,26 @@
+A beadandó feladat leírása: OR_beadando.html [https://canvas.elte.hu/courses/1115/files/36461/download?verifier=tWKVkQyXttyJuPcxYUXkOj6z3jfyNzifBXNs7JE4&wrap=1]
+
+Minta input fájl: input.txt [https://canvas.elte.hu/courses/1115/files/29026/download?verifier=kZ3lsafwOVJai5nzO3G6nAGYhQU3cLyyucqHlNz3&wrap=1]
+
+Tesztelő: teszt.zip [https://canvas.elte.hu/courses/1115/files/29027/download?verifier=ympReRB2sNpaQvfB63UFLTnSr2LMNor7NuMFAE4L&wrap=1]
+
+A beadandóra kétféle értékelést lehet kapni: kész (elfogadva), illetve hiányos (elutasítva). A hiányos beadandót határidőig ki kell javítani. A határidőig akárhány változatot és javítást be lehet adni.
+
+A forrásfájlokat zip-be tömörítve kell feltölteni.
+
+A tesztelő használata: 
+    - a forráskódokat (az őket tartalmazó csomag nélkül) a teszt-en belül a garden mappába kell bemásolni 
+    - a teszt.bat fájlt kell futtatni
+    - a teszt futása eltarthat néhány percig, max. 4 perc hosszú
+    - ha csak valamelyik esete(ke)t szeretnéd újra lefuttatni, a gardentest mappában a GardenRmiTest.java fájlban kommentezd ki azokat a teszteseteket (mindegyik a @Test annotációval kezdődik), amiket nem akarsz lefuttatni
+    - előfordulhat, hogy 1-1 sor sorrendje felcserélődik, attól még lehet jó a beadandó. Ilyenkor érdemes a tesztet lefuttatni még pár alkalommal
+
+*******************************************************************
+
+Beadandó értékelése:
+
+Elfogadom, de vannak kisebb hiányosságok:
+- Az üzeneteket fájlba kellett volna írni.
+- A GardenStore-ban összegezni kellett volna az eladott növényeteket és az elszáradtakat.
+- A PlantFactory-nak kellett volna egy main metódus, amiben bejegyzi a távoli objektumot a registry-be.
+Békefi Bianka Flóra B3XFUW , 2017. dec 11, 15:07

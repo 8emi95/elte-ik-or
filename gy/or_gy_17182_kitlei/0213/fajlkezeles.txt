@@ -1,0 +1,34 @@
+
+import java.util.Scanner;
+import java.io.File;
+
+
+
+Scanner sc = new Scanner("a.txt");
+Scanner sc = new Scanner(new File("a.txt"));
+
+File f = ......
+Scanner sc = new Scanner(f);
+
+
+if (sc.hasNext())
+if (sc.hasNextInt())
+if (sc.hasNextLine())
+
+String olvasott1 = sc.next();
+int num = sc.nextInt();
+String olvasott2 = sc.nextLine();
+
+sc.close();
+
+
+try (
+	Scanner sc = new Scanner(.....);
+	PrintWriter pw = new PrintWriter("out.txt");
+) {
+	pw.print("abc");
+	pw.println("xyz");
+}
+
+
+

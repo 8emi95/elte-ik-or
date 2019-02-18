@@ -1,0 +1,98 @@
+L > sorsolas: [64, 48, 38, 26, 29]
+L > tipp: [1, 2, 3, 4, 5]; kifizetes: -2; uj kassza: 52
+E1> tipp: [1, 2, 3, 4, 5]; kifizetes: -2; penzem: 8
+L > tipp: [1, 2, 3, 4, 38]; kifizetes: -2; uj kassza: 54
+E2> tipp: [1, 2, 3, 4, 38]; kifizetes: -2; penzem: 18
+L > tipp: [1, 2, 3, 4, 5]; kifizetes: -2; uj kassza: 56
+E3> tipp: [1, 2, 3, 4, 5]; kifizetes: -2; penzem: 28
+L > sorsolas: [17, 68, 85, 88, 14]
+L > tipp: [1, 2, 3, 4, 38]; kifizetes: -2; uj kassza: 58
+E4> tipp: [1, 2, 3, 4, 38]; kifizetes: -2; penzem: 38
+L > tipp: [1, 2, 3, 4, 5]; kifizetes: -2; uj kassza: 60
+E1> tipp: [1, 2, 3, 4, 5]; kifizetes: -2; penzem: 6
+L > tipp: [1, 2, 3, 4, 5]; kifizetes: -2; uj kassza: 62
+E5> tipp: [1, 2, 3, 4, 5]; kifizetes: -2; penzem: 48
+L > tipp: [17, 2, 3, 6, 14]; kifizetes: 8; uj kassza: 54
+E2> tipp: [17, 2, 3, 6, 14]; kifizetes: 8; penzem: 26
+L > tipp: [1, 2, 3, 4, 5]; kifizetes: -2; uj kassza: 56
+E3> tipp: [1, 2, 3, 4, 5]; kifizetes: -2; penzem: 26
+L > sorsolas: [67, 55, 58, 10, 63]
+L > tipp: [17, 2, 3, 6, 14]; kifizetes: -2; uj kassza: 58
+E4> tipp: [17, 2, 3, 6, 14]; kifizetes: -2; penzem: 36
+L > tipp: [1, 2, 3, 4, 5]; kifizetes: -2; uj kassza: 60
+E1> tipp: [1, 2, 3, 4, 5]; kifizetes: -2; penzem: 4
+L > tipp: [1, 2, 3, 4, 5]; kifizetes: -2; uj kassza: 62
+E5> tipp: [1, 2, 3, 4, 5]; kifizetes: -2; penzem: 46
+L > tipp: [56, 10, 58, 3, 5]; kifizetes: 8; uj kassza: 54
+E2> tipp: [3, 5, 56, 10, 58]; kifizetes: 8; penzem: 34
+L > tipp: [1, 2, 3, 4, 5]; kifizetes: -2; uj kassza: 56
+E3> tipp: [1, 2, 3, 4, 5]; kifizetes: -2; penzem: 24
+L > sorsolas: [3, 56, 8, 10, 77]
+L > tipp: [56, 10, 58, 3, 5]; kifizetes: 13; uj kassza: 43
+E4> tipp: [3, 5, 56, 10, 58]; kifizetes: 13; penzem: 49
+L > tipp: [1, 2, 3, 4, 5]; kifizetes: -2; uj kassza: 45
+E1> tipp: [1, 2, 3, 4, 5]; kifizetes: -2; penzem: 2
+L > tipp: [1, 2, 3, 4, 5]; kifizetes: -2; uj kassza: 47
+E5> tipp: [1, 2, 3, 4, 5]; kifizetes: -2; penzem: 44
+L > tipp: [64, 1, 58, 55, 15]; kifizetes: -2; uj kassza: 49
+E2> tipp: [64, 1, 55, 58, 15]; kifizetes: -2; penzem: 32
+L > tipp: [1, 2, 3, 4, 5]; kifizetes: -2; uj kassza: 51
+E3> tipp: [1, 2, 3, 4, 5]; kifizetes: -2; penzem: 22
+L > sorsolas: [64, 1, 55, 58, 15]
+L > tipp: [64, 1, 58, 55, 15]; kifizetes: 23; uj kassza: 28
+E4> tipp: [64, 1, 55, 58, 15]; kifizetes: 23; penzem: 72
+L > tipp: [1, 2, 3, 4, 5]; kifizetes: -2; uj kassza: 30
+E1> tipp: [1, 2, 3, 4, 5]; kifizetes: -2; penzem: 0
+L > tipp: [1, 2, 3, 4, 5]; kifizetes: -2; uj kassza: 32
+E5> tipp: [1, 2, 3, 4, 5]; kifizetes: -2; penzem: 42
+L > tipp: [88, 34, 19, 36, 21]; kifizetes: -2; uj kassza: 34
+E2> tipp: [34, 19, 36, 21, 88]; kifizetes: -2; penzem: 30
+L > tipp: [1, 2, 3, 4, 5]; kifizetes: -2; uj kassza: 36
+E3> tipp: [1, 2, 3, 4, 5]; kifizetes: -2; penzem: 20
+L > sorsolas: [53, 10, 60, 15, 79]
+L > tipp: [88, 34, 19, 36, 21]; kifizetes: -2; uj kassza: 38
+E4> tipp: [34, 19, 36, 21, 88]; kifizetes: -2; penzem: 70
+E1> A lottozas befejezodott, mert elfogyott a penzem.
+L > tipp: [1, 2, 3, 4, 5]; kifizetes: -2; uj kassza: 40
+E5> tipp: [1, 2, 3, 4, 5]; kifizetes: -2; penzem: 40
+L > tipp: [2, 3, 11, 4, 5]; kifizetes: -2; uj kassza: 42
+E2> tipp: [2, 3, 4, 5, 11]; kifizetes: -2; penzem: 28
+L > tipp: [1, 2, 3, 4, 5]; kifizetes: -2; uj kassza: 44
+E3> tipp: [1, 2, 3, 4, 5]; kifizetes: -2; penzem: 18
+L > sorsolas: [34, 19, 36, 21, 88]
+L > tipp: [2, 3, 11, 4, 5]; kifizetes: -2; uj kassza: 46
+E4> tipp: [2, 3, 4, 5, 11]; kifizetes: -2; penzem: 68
+L > tipp: [1, 2, 3, 4, 5]; kifizetes: -2; uj kassza: 48
+E5> tipp: [1, 2, 3, 4, 5]; kifizetes: -2; penzem: 38
+L > tipp: [88, 83, 4, 12, 71]; kifizetes: -2; uj kassza: 50
+E2> tipp: [83, 4, 71, 88, 12]; kifizetes: -2; penzem: 26
+L > tipp: [1, 2, 3, 4, 5]; kifizetes: -2; uj kassza: 52
+E3> tipp: [1, 2, 3, 4, 5]; kifizetes: -2; penzem: 16
+L > sorsolas: [83, 4, 71, 88, 12]
+L > tipp: [88, 83, 4, 12, 71]; kifizetes: 23; uj kassza: 29
+E4> tipp: [83, 4, 71, 88, 12]; kifizetes: 23; penzem: 91
+L > tipp: [1, 2, 3, 4, 5]; kifizetes: -2; uj kassza: 31
+E5> tipp: [1, 2, 3, 4, 5]; kifizetes: -2; penzem: 36
+L > tipp: [72, 3, 27, 4, 5]; kifizetes: -2; uj kassza: 33
+E2> tipp: [3, 4, 5, 72, 27]; kifizetes: -2; penzem: 24
+L > tipp: [1, 2, 3, 4, 5]; kifizetes: -2; uj kassza: 35
+E3> tipp: [1, 2, 3, 4, 5]; kifizetes: -2; penzem: 14
+L > sorsolas: [65, 51, 84, 72, 27]
+L > tipp: [72, 3, 27, 4, 5]; kifizetes: 8; uj kassza: 27
+E4> tipp: [3, 4, 5, 72, 27]; kifizetes: 8; penzem: 99
+L > tipp: [1, 2, 3, 4, 5]; kifizetes: -2; uj kassza: 29
+E5> tipp: [1, 2, 3, 4, 5]; kifizetes: -2; penzem: 34
+L > tipp: [72, 65, 51, 84, 28]; kifizetes: 18; uj kassza: 11
+E2> tipp: [65, 51, 84, 72, 28]; kifizetes: 18; penzem: 42
+L > sorsolas: [18, 38, 27, 29, 45]
+L > tipp: [1, 2, 3, 4, 5]; kifizetes: -2; uj kassza: 13
+E3> tipp: [1, 2, 3, 4, 5]; kifizetes: -2; penzem: 12
+L > tipp: [72, 65, 51, 84, 28]; kifizetes: -2; uj kassza: 15
+E4> tipp: [65, 51, 84, 72, 28]; kifizetes: -2; penzem: 97
+L > tipp: [1, 2, 3, 4, 5]; kifizetes: -2; uj kassza: 17
+E5> tipp: [1, 2, 3, 4, 5]; kifizetes: -2; penzem: 32
+L > tipp: [18, 27, 29, 45, 38]; kifizetes: 23; uj kassza: -6
+E2> A lottozas befejezodott, mert a lottozo csodbe ment.
+E3> A lottozas befejezodott, mert a lottozo csodbe ment.
+E4> A lottozas befejezodott, mert a lottozo csodbe ment.
+E5> A lottozas befejezodott, mert a lottozo csodbe ment.

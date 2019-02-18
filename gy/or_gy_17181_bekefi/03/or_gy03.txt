@@ -1,0 +1,10 @@
+3. Gyakorlat
+1. Készíts programot, ami párhuzamosan indít több szálat, amelyek a Hello és a világ szövegeket írják ki felváltva.
+
+A szálak most karakterenként írják ki a szövegeket.
+Mint az előző feladat, de működjön jól a program.
+Minden szó/karakter kiírása után várakozzon fél másodpercet.
+
+2. Az órai elején megoldott feladathoz készíts egy StartPrograms osztályt, ami tartalmat főprogramot és elindít egy darab szervert és a megfelelő darabszámú kliens, mindet külön szálon (a szervert is). A kliensek szám most lehet tetszőleges konstans érték.
+
+3. Készíts programot, ami elindít több szálat. A szálak egy közös változó értékét csökkentik egyesével. Ha ez az érték eléri a 0-t, akkor már ne csökkentsék tovább, érjen véget a szálak futása.

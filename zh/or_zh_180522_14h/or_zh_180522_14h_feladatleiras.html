@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)https://bead.inf.elte.hu/submission?asg-key=164 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>BE-AD Assignment Management System</title><link rel="shortcut icon" href="https://bead.inf.elte.hu/icon.ico"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content=""><meta name="author" content=""><script src="./BE-AD Assignment Management System_files/jquery.js.download"></script><link type="text/css" href="./BE-AD Assignment Management System_files/jquery-ui.css" rel="stylesheet"><script src="./BE-AD Assignment Management System_files/jquery-ui.js.download"></script><script src="./BE-AD Assignment Management System_files/moment.js.download"></script><link type="text/css" href="./BE-AD Assignment Management System_files/bootstrap.min.css" rel="stylesheet"><link type="text/css" href="./BE-AD Assignment Management System_files/bootstrap.custombutton.css" rel="stylesheet"><script src="./BE-AD Assignment Management System_files/bootstrap.min.js.download"></script><link type="text/css" href="./BE-AD Assignment Management System_files/bootstrap-datetimepicker.min.css" rel="stylesheet"><script src="./BE-AD Assignment Management System_files/bootstrap-datetimepicker.min.js.download"></script><script src="./BE-AD Assignment Management System_files/DynamicContents.js.download"></script><link type="text/css" href="./BE-AD Assignment Management System_files/katex.min.css" rel="stylesheet"><script src="./BE-AD Assignment Management System_files/katex.min.js.download"></script><script>window.onload = function(){ var mathElements = document.getElementsByClassName("math"); for (var i=0; i < mathElements.length; i++) { var texText = mathElements[i].firstChild; katex.render(texText.data, mathElements[i]); }}</script></head><body style=""><div class="navbar navbar-default navbar-fixed-top"><style>.body{padding-top:70px}</style><div class="container"><div class="navbar-header"></div><div class="collapse navbar-collapse navbar-ex1-collapse"></div></div></div><div class="container"><div class="row"><div class="col-md-12"><hr></div></div><div class="row"><div class="col-md-12"><div class="page-header"><h2>Submission</h2></div></div></div><div class="row"><div class="col-md-12"><table class="table table-bordered table-condensed table-hover table-striped"><tbody><tr><td><b>Course: </b></td><td>Osztott rendszerek (BSc)</td></tr><tr><td><b>Teacher: </b></td><td>Kitlei Robert Laszlo</td></tr><tr><td><b>Assignment: </b></td><td>Osztott ZH 2018.05.22. Első turnus 14:00</td></tr><tr><td><b>Deadline: </b></td><td>2018-05-22, 16:20:00</td></tr><tr><td><b>Time left: </b></td><td><a id="ctd">Deadline is reached</a><script>ctdcountdown();function ctdcountdown() {var minsecs = 60;var hoursecs = minsecs * 60;var daysecs = hoursecs* 24;var mstime = -1483953 * 1000;var timestamp = new Date;var interval = setInterval(function() {var el = document.getElementById("ctd");var now = new Date;var dt = now - timestamp;timestamp = now;mstime = mstime - dt;var time = Math.round( mstime / 1000 );if(time < 0) {el.innerHTML = "Deadline is reached";clearInterval(interval);return;}var edays   = Math.floor( time / daysecs );var ehours1 = time % daysecs;var ehours  = Math.floor( ehours1 / hoursecs );if (ehours < 10) ehours = "0" + ehours;var emins1  = ehours1 % hoursecs;var emins   = Math.floor( emins1 / minsecs );if (emins < 10) emins = "0" + emins;var esecs   = emins1 % minsecs;if (esecs < 10) esecs = "0" + esecs;var text="";if(edays == 0) {if(ehours == 0) {text = emins + ':' + esecs;} else {text = ehours + ':' + emins + ':' + esecs;}} else {text = edays + " day(s) " + ehours + ':' + emins + ':' + esecs;}el.innerHTML = text;}, 1000);}</script></td></tr></tbody></table></div></div><div class="row"><div class="col-md-12"><div class="alert alert-danger"><p>Deadline is reached.</p></div></div></div><div class="row"><div class="col-md-12"><hr></div></div><div class="row"><div class="col-md-12"><div class="row"><div class="col-md-12"><p>There are no submissions.</p></div></div></div></div><div class="row"><div class="col-md-12"><h2>Description</h2><div style="margin-left:0px; background: lightgray"><h1 id="általános-tudnivalók">Általános tudnivalók</h1>
+<h2 id="a-zh-feltételei">A ZH feltételei</h2>
+<p>Általános feltételek:</p>
+<ul>
+<li>Amennyiben a megoldás fordítási hibát tartalmaz, nem fogadható el.</li>
+<li>Az alapfeladat megoldása elégségest ér, minden további feladat megoldása eggyel növeli az érdemjegyet. Az alapfeladat utáni feladatrészek tetszőleges sorrendben oldhatók meg.</li>
+<li>A feladatot önállóan kell megoldani, összedolgozás esetén <strong>egyik fél sem</strong> kap jegyet a tárgyból a félévben.
+<ul>
+<li>A ZH során <strong>nem lehet elöl</strong> mobiltelefon, pendrive stb.</li>
+</ul></li>
+</ul>
+<p>A kóddal kapcsolatban:</p>
+<ul>
+<li>A leírásban szereplő elnevezéseket pontosan kell követni, egyéb segédfüggvények/osztályok/adattagok igény szerint felvehetők.</li>
+<li>Kövesd a Java elnevezési konvencióit.</li>
+<li>Ha a leírás nem említi másként, feltehető, hogy a bemenet helyes (megfelelő számú és típusú adat érkezik, a kliens és a szerver követi a protokollt stb.), külön ellenőrzések nem szükségesek.</li>
+<li>Használható segédanyagok:
+<ul>
+<li><a href="https://bead.inf.elte.hu/files/java/api/index.html">Java dokumentáció</a></li>
+<li>a gyakorlatokon vett példák</li>
+<li>az adatbáziskezelő könyvtárak
+<ul>
+<li><a href="https://kitlei.web.elte.hu/zhdb/hsqldb-2.4.0.jar">hsqldb-2.4.0.jar</a></li>
+<li><a href="https://kitlei.web.elte.hu/zhdb/sqlite-jdbc-3.21.0.jar">sqlite-jdbc-3.21.0.jar</a></li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="a-beadás-menete">A beadás menete</h2>
+<ol style="list-style-type: decimal">
+<li>Ellenőrizd, hogy fordítási hibáktól mentes-e a kódod.</li>
+<li>A megoldást egyetlen <code>.zip</code> állományként töltsd fel a BE-AD rendszerbe.
+<ul>
+<li>Ha fejlesztőkörnyezetben készült a megoldás, a <code>.zip</code>-be a projektkönyvtárat kell betömöríteni.</li>
+<li>A fájl neve tetszőleges lehet.</li>
+</ul></li>
+<li>Kattints a jelszó mezőjére, hogy odakerüljön a kurzor.</li>
+<li>Hívd oda valamelyik segítőt, hogy beírja a jelszót.</li>
+</ol>
+<h1 id="alapfeladat">Alapfeladat</h1>
+<p>Készíts kvízkérdések adminisztrációjára egy szerver-kliens alkalmazást.</p>
+<ul>
+<li>Készíts egy <code>kerdeses.KvizKerdes</code> típust, ami egy kvízkérdést reprezentál. A kérdés rendelkezzen egy <code>kerdes</code> (<code>String</code>), és egy <code>valasz</code> (<code>String</code>) adattaggal.</li>
+<li>Készíts egy <code>kerdeses.KvizSzerver</code> típust, ami egy futtatható Java osztály.
+<ul>
+<li>A <code>main</code> függvény indítson egy szervert az első parancssori paraméterként megadott porton, és várja kliensek egymás utáni csatlakozását.</li>
+<li>A klienstől csatlakozás után két sort várjon: egy kérdést, és a hozza tartozó helyes választ.
+<ul>
+<li>A szerver tárolja el a kapott kerdéseket és válaszokat egy listába. Ezt a listát egy <code>kerdeses.KvizKerdesek</code> típus tartalmazza, ami <code>kerdeses.KvizKerdes</code> példányokat tartalmaz.</li>
+</ul></li>
+<li>A szerver nem vár választ, az adatok fogadása után bontja a kapcsolatot.</li>
+<li>A szerver minden új kérdés beérkezése után kiírja a sztenderd kimenetére az összes eddig beérkezett kérdést és választ.</li>
+</ul></li>
+<li>Készíts egy <code>kerdeses.KvizIro</code> nevű, futtatható Java osztályt. A program kérjen be a felhasználótól a sztenderd bemeneten egy kérdést, és az ahhoz tartozó helyes választ (egy-egy sor), majd küldje el a kapott adatokat a parancssori paraméterként megkapott szervernek (az első parancssori paraméter a host, a második a port)</li>
+</ul>
+<h1 id="párhuzamosság">Párhuzamosság</h1>
+<ul>
+<li>A <code>kerdeses.KvizSzerver</code> szerverhez játékosok is csatlakozhatnak, a második parancssori paraméterként megkapott porton. Ezt a funckionalitást a <code>kerdeses.KvizJatek</code> <code>Runnable</code> típus valósítsa meg.
+<ul>
+<li>Miután egy kliens kapcsolódott, a szerver elküld neki egy véletlenszerűen választott kérdést, és várja a választ.
+<ul>
+<li>A szerver felteheti ugyanazt a kérdést többször is.</li>
+</ul></li>
+<li>A kliensnek ezután egy perce van elküldeni egy választ egy sorban.</li>
+<li>Amennyiben a kliens nem küld választ, vagy helytelen választ küld, kiesett, és a szerver bontja a kapcsolatot.</li>
+<li>Amennyiben helyes választ küldött, a szerver küldi a következő kérdést.</li>
+<li>Párhuzamosan több játékos is csatlakozhasson, egymástól függetlenül játszanak.</li>
+</ul></li>
+<li>Készítsd el a <code>kerdeses.KvizJatekos</code> típust, ami egy futtatható Java osztály.
+<ul>
+<li>A main függvény kapcsolódjon a parancssori paraméterekkel (<code>host</code>, <code>port</code>) megadott szerverhez, majd a megkapott kérdést (egy sor) jelenítse meg a sztenderd kimeneten.</li>
+<li>Ezután a sztenderd bemenetről várjon egy válaszra (egy sor), és küldje el azt a szervernek, majd ismételje ezt, amíg a kapcsolat aktív.</li>
+</ul></li>
+<li>A megoldás legyen szálbiztos: egy rossz ütemezés ne okozhassa a program leállását vagy hibás működését!</li>
+</ul>
+<h1 id="rmi">RMI</h1>
+<ul>
+<li>A szerver vezessen egy toplistát a kérdésekről, a <code>kerdeses.IStat</code> távoli interface segítségével. Az interface egy metódust tartalmazzon, ami visszaadja a felvett kérdések számát.</li>
+<li>A <code>kerdeses.Stat</code> osztály implementálja ezt az interface-t. A <code>KvizSzerver</code> típus frissítse ezt az információt, miután egy kérdést hozzáadott.</li>
+<li>A szerver exportálja ezt az RMI szolgáltatást egy névjegyzékbe. A névjegyzéket a <code>22558</code> porton indítsd el.</li>
+<li>Készíts egy <code>kerdeses.KerdesekSzama</code> futtatható Java osztályt, ami megjeleníti ezt a számot.</li>
+</ul>
+<h1 id="adatbázis">Adatbázis</h1>
+<ul>
+<li>Egészítsd ki a <code>KvizKerdes</code> típust egy kategóriaval, ami egy <code>String</code>.</li>
+<li>A kérdések ne egy listaban legyenek tárolva, hanem legyenek adatbázisba mentve egy táblaba, ami a szükséges három szöveges oszlopot (<code>kerdes</code>, <code>valasz</code>, <code>kategoria</code>) tartalmazza.</li>
+<li>Az adatbázis műveleteket a <code>kerdeses.KvizModel</code> típusban található metódusok valósítsák meg.</li>
+<li>Amennyiben a tábla nem létezik, azt a modell típus automatikusan hozza létre.</li>
+<li>A <code>KvizIro</code> típus egy kategóriát is kérjen be a felhasználótól, és azt is küldje el a szervernek.</li>
+<li>A <code>KvizJatekos</code> tipust, és a <code>KvizJatek</code> szervert módosítsd, hogy a kommunikációt a kliens kezdje: küldje el a kategóriát a szervernek, és a szerver ezután csak ebből a kategóriából tegyen fel kérdéseket. Amennyiben nincs egy kérdés se a kategóriában, bontsa a kapcsolatot.</li>
+</ul></div></div></div><div class="row"><div class="col-md-12"><hr></div></div></div></body></html>

@@ -1,0 +1,26 @@
+1. Gyakorlat
+A feladatok forráskódját a gyak1 csomagba tedd. 
+
+1. Készíts egy síkidomokat reprezentáló osztályt (Shape). Tárolja a síkidom középpontját (két egész szám), 
+ a területét és a kerületét. Készíts hozzá getter és setter metódusokat, valamint egy toString() metódust, ami 
+ visszadja a középpontot, a területet és a kerületet vesszővel elválasztva.
+
+2. Az előző feladatban elkészített Shape osztályból származtatva, hozz létre egy köröket (Circle) és egy négyzetet (Square) reprezentáló osztályt. A Circle osztály tárolja el továbbá a kör sugarát, a Square osztály pedig a négyzet oldalhosszát. 
+Mindkét osztályba készíts egy calculate() metódust, ami az objektum aktuális értékei alapján kiszámítja a síkidom kerületét  és területét.
+
+3. Készíts egy olyan programot (ReadShapes), amely a szabványos bemenetről be tudja olvasni különböző fajta alakzatok adatait, majd azokat eltárolni! A beolvasást addig folytatjuk, amíg nem kapunk egy "quit" üzenetet. 
+A másik ilyen parancs legyen az "add", amely után szóközzel elválasztva között megadjuk, hogy milyen alakzatot, milyen paraméterekkel akarunk felvenni. Az alakzatok rendre:
+
+    "square": Square típusú objektum, vagyis négyzet lébrehozása középpont x és y koordinátáival, valamint az oldalhossz megadásával, 
+
+    "circle": Circle típusú objektum, vagyis kör létrehozása a középpont x és y koordinátáinak, valamint a sugár megadásával. 
+
+Pl.:  
+add square 1 2 3 // bal felso pont: (x, y), oldalhossz: 3 
+add circle 3 4 5  // kozeppont: (3, 4), sugar: 5 
+Miután befejeztük a beolvasást, a szabványos kimeneten jelenítsük meg az összes beolvasott értéket (a saját toString() metódusán keresztül)! 
+
+4. Készíts egy Sudoku osztályt, amelyben szerepeljenek a következő statikus metódusok: <br>
+    - egy olyan check() nevű függvény, amely ellenőrzi, hogy egész értékeket tartalmazó, 3x3 elemű kétdimenziós tömb értékei csak 1 és 9 között szerepelnek, illetve mindegyik számot csak egyszer tartalmazza! 
+    - egy olyan show() nevű függvényt, amely előállítja egy kétdimenziós tömbnek egy olyan szöveges reprezentációját, amely mátrixként formázva tartalmazza annak elemeit! 
+Készíts hozzá egy main() metódust a függvények teszteléséhez. 

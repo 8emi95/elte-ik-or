@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+    code
+    {
+      color: blue;
+      font-size: 14px;
+      white-space: pre;
+      border-radius: 3px;
+      font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+      padding: 2px 4px;
+      background-color: #f7f7f9;
+      border: 1px solid #e1e1e8;
+    }
+  
+    pre.sourceCode
+    {
+    	margin-left: 3em;
+    	padding: 0.5em;
+  
+    	border: 0.1em green solid !important;
+  
+    }
+  
+  </style>
+</head>
+<body>
+<div id="TOC">
+<ul>
+<li><a href="#bemelegítő-feladatok">Bemelegítő feladatok</a></li>
+<li><a href="#bemelegítő-feladatok-2.">Bemelegítő feladatok 2.</a></li>
+<li><a href="#szerver-kliens">Szerver-kliens</a></li>
+<li><a href="#párhuzamosság">Párhuzamosság</a></li>
+<li><a href="#szerializáció">Szerializáció</a></li>
+<li><a href="#távoli-metódushívás">Távoli metódushívás</a></li>
+<li><a href="#adatbáziskezelés">Adatbáziskezelés</a></li>
+</ul>
+</div>
+<h1 id="bemelegítő-feladatok">Bemelegítő feladatok</h1>
+<ol style="list-style-type: decimal">
+<li>Készíts “Helló világ” programot.</li>
+<li>Írd ki a parancssori paraméterek számát.</li>
+<li>Írd ki a parancssori paramétereket
+<ol style="list-style-type: lower-alpha">
+<li>sorban</li>
+<li>sorszámozva</li>
+<li>fordított sorrendben</li>
+<li>csak a hosszaikat</li>
+<li>az összegüket (tfh mind szám)</li>
+<li>a párosakat</li>
+<li>sorrendben (tfh mind szöveg)</li>
+<li>sorrendben (tfh mind szám)</li>
+<li>azokat, amelyikekből több is található</li>
+</ol></li>
+<li>Írd ki a Fibonacci-sorozat első n elemét. Az <code>n</code> parancssori paraméter.
+<ol style="list-style-type: lower-alpha">
+<li>oldd meg függvénnyel is</li>
+<li>… legalább három különböző megközelítés jöhet szóba</li>
+<li>készíts olyan függvényt is, amely a megadott paraméterig visszaadja az összes Fibonacci-értéket valamilyen adatszerkezetben</li>
+</ol></li>
+<li>Add meg egy parancssori paraméterként kapott szám összes osztóját.</li>
+<li>Vonj négyzetgyököt egy parancssori paraméterként kapott számból.
+<ul>
+<li>Newton-iterációval is</li>
+</ul></li>
+<li><p>A parancssori paraméterek lengyel formában adott kifejezést írnak le. A kifejezésben a négy alapművelet szerepelhet. Számítsd ki az eredményt.</p>
+<p>Pl. <code>1 2 3 * +</code> eredménye <code>(3 * 2) + 1</code>, azaz <code>7</code></p></li>
+</ol>
+<h1 id="bemelegítő-feladatok-2.">Bemelegítő feladatok 2.</h1>
+<p>Az alábbiak feladatok úgy is megoldhatók, hogy a “parancssori paraméterek” helyett a sztenderd bemenetről olvassuk be a paramétereket.</p>
+<ol style="list-style-type: decimal">
+<li><p>A parancssori paraméterek a sík pontjait írják le. Add meg, melyik van legtávolabb az origótól.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Add meg, hogy melyik pont van legközelebb a legelső ponthoz. (Saját maga kivételével, természetesen. Legalább két pontunk van.)</li>
+</ol></li>
+<li><p>Írd ki a parancssori paramétereket egy sorban úgy, hogy a paraméterekben az egymás utáni ‘a’ betűket egyetlen ‘a’ betűre cseréled.</p>
+<ol style="list-style-type: lower-alpha">
+<li>reguláris kifejezés használatával</li>
+<li>regkif nélkül, a <code>StringBuilder</code> osztály felhasználásával elkészítve az új szavakat</li>
+</ol></li>
+<li><p>A parancssori paraméterek emberek neveit tartalmazzák (egy családnév + egy utónév). Írd ki az emberek neveit családnév szerint csoportosítva.</p>
+<ul>
+<li>utónév szerint csoportosítva is</li>
+</ul></li>
+<li><p>Írd ki a Pascal-háromszög első <code>n</code> sorát. Az n szám parancssori paraméter.</p></li>
+<li><p>Az első két paraméter, <code>n</code> és <code>m</code>, egy tábla méreteit leíró két egész szám. A további paraméterpárok a táblára leadott lövések koordinátái. Rajzold ki a táblát úgy, hogy <code>X</code> jelöli a találatokat, <code>.</code> pedig a többi mezőt.</p></li>
+<li><p>Az első parancssori paraméter egy szöveg, a többi paraméterpár pedig egy-egy karaktert tartalmaz. Cseréld le a szövegben a párok első felében szereplő karaktereket a másodikakra.</p></li>
+<li><p>Egy egyenes kieséses tornát szimulálunk. A parancssori paraméterek a következőképpen néznek ki. Az első paraméter a játékosok száma (<code>n</code>), ez kettő valamelyik hatványa. A következő <code>n</code> paraméter a játékosok neveit írja le. A következő <code>n/2</code> paraméter az első kör eredményeit írja le: a szomszédos játékosok játszanak, <code>1</code> jelenti azt, hogy az első játékos győz, <code>2</code> azt, ha a második. Az így kialakuló <code>n/2</code> játékos közötti <code>n/4</code> meccs eredményeit, majd az abból kijövő <code>n/8</code>, <code>n/16</code> stb. mérkőzés eredményeit a további paraméterek írják le.</p></li>
+</ol>
+<p>A program írja ki a torna mérkőzéseit fordulónként vizualizálva (lásd a példát), illetve meccsekre bontva is. A fordulónkénti ábrázolás első oszlopában az összes játékos a felsorolt sorrendben található meg. A második oszlopban már csak a játékosok fele szerepel, akik győztek az első fordulóban stb.</p>
+<p>Példa: ha a bemenet <code>8 J1 J2 J3 J4 J5 J6 J7 J8 1 1 1 2 1 2 2</code> akkor a kimenet alakja az alábbi legyen:</p>
+<pre><code>J1 J1 J1 J8
+J2
+J3 J3
+J4
+J5 J5 J8
+J6
+J7 J8
+J8</code></pre>
+<p>a kimenet értelmezéséhez:</p>
+<pre><code>1. fordulo, J1-J2 gyoztese: J1
+1. fordulo, J3-J4 gyoztese: J3
+1. fordulo, J5-J6 gyoztese: J5
+1. fordulo, J7-J8 gyoztese: J8
+2. fordulo, J1-J3 gyoztese: J1
+2. fordulo, J5-J8 gyoztese: J8
+donto, J1-J8 gyoztese: J8</code></pre>
+<h1 id="szerver-kliens">Szerver-kliens</h1>
+<ol start="0" style="list-style-type: decimal">
+<li><p>Készíts egy szervert és egy klienst. A szerver induljon el egy porton (ami parancssori paraméterként adott), a kliens csatlakozzon hozzá, és küldjön át egy üzenetet. A szerver írja ki az üzenetet a sztenderd kimenetére.</p></li>
+<li><p>A szerver küldje vissza a kliensnek az üzenetet, és a kliens írja ki azt.</p></li>
+<li><p>A szerver paraméterként kapjon egy szöveget is. A kliens küldjön át egy számot; a szerver egy sorban válaszoljon egy olyan szöveggel, amely a paraméterként kapott szövegét ennyiszer tartalmazza.</p>
+<ol style="list-style-type: lower-alpha">
+<li>A feladatnak van egy egyszerű nem túl hatékony (azaz: rossz futási karakterisztikájú) megoldása. Ha a kliens által küldött szám <code>n</code>, akkor milyen nagyságrendű lépést tesz meg (és mekkora memóriát foglal) ez a megoldás?</li>
+<li><p>Van két hatékony megoldás is, ami természetesen adódik, az egyik hasonlít az előzőleg említett megoldásra, a másik nem.</p>
+<ul>
+<li>Ezek milyen nagyságrendűek?</li>
+<li>Próbáld ki sok adattal őket annak igazolására, hogy sokkal hatékonyabbak.</li>
+<li>A kettő közül hatékonyabb-e egyik a másiknál?</li>
+</ul></li>
+</ol></li>
+<li><p>A kliens küldjön át sorban egész számokat a szervernek. A számokat a kliens egy fájlból olvassa be. A szerver mindegyik számra meghív egy függvényt, ami egész számot készít (mondjuk <code>n ↦ 2*n+1</code>), majd az eredményt visszaküldi a kliensnek. A kliens a visszakapott eredményeket egy fájlba írja ki sorban. Ha a <code>0</code> szám következne a kliensoldalon, akkor a kliens kilép.</p>
+<ol style="list-style-type: lower-alpha">
+<li>A kliens most küldje át az összes adatot a szervernek, és csak utána fogadja a visszaérkező számokat; hasonlóan, a szerver fogadja az összes számot, és csak utána küldje el őket átalakítva a kliensnek.</li>
+<li>A szerver várakozzon a kliens kilépése után új kliensre, és ez ismétlődjön a végtelenségig.</li>
+</ol></li>
+<li><p>A kliens átküld egy fájlnevet a szervernek. A szerver küldje vissza a fájl tartalmát soronként, ha a fájl létezik, különben pedig egy szöveges hibaüzenetet.</p></li>
+<li><p>A szerver tárolja el, hogy hány kliens kapcsolódott már hozzá. Amikor egy kliens kapcsolódik, a szerver írja ezt vissza neki, majd rögtön bontsa a kapcsolatot, és várakozzon újabb kliensre.</p></li>
+<li><p>A szerver tároljon el egy számot, ennek értéke legyen kezdetben <code>0</code>. Miután kapcsolódott, a kliens egymás után egész számokat küld át a szervernek; a szerver a kapott értékkel megnöveli a benne tárolt értéket, és ezt át is küldi a kliensnek. A kliens ki is léphet (pl. ha nullát küldene), ekkor a szerver kezdjen várakozni egy újabb klienstől jövő kapcsolatra. A tárolt szám maradjon meg, ne törlődjön.</p></li>
+<li><p>A szerverhez kapcsolódjon két kliens egymás után (ugyanazon a porton) úgy, hogy a szerver mindkét kapcsolatot egyszerre tartja nyitva. A kliensek először egy-egy sorban a saját nevüket küldik át, majd felváltva írhatnak be egy-egy sornyi szöveget. A beírt üzeneteket küldje át a szerver a másik kliensnek ilyen alakban: <code>&lt;másik kliens neve&gt;: &lt;másik kliens üzenete&gt;</code>. Ha valamelyik kliens bontja a kapcsolatot, akkor a szerver zárja be a másik klienssel a kapcsolatot, és lépjen ki.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Ha az egyik kliens bontja a kapcsolatot, akkor a szerver várakozzon egy újabb kliensre, aki kapcsolódás után átveszi az előző helyét. Természetesen az új kliens is először a saját nevét küldi át.</p></li>
+<li><p>A porton tetszőlegesen sok kliens kapcsolódhat, és bármikor ki is léphetnek. A szerver sorban engedi szóhoz jutni a klienseket, azonban az üzeneteket nem azonnal küldi el mindegyik másik kliensnek. Ehelyett a szerver összegyűjti az üzeneteket, és csak akkor küldi el az adott kliens számára szóló üzeneteket, amikor az éppen szóhoz jut.</p></li>
+</ol></li>
+</ol>
+<h1 id="párhuzamosság">Párhuzamosság</h1>
+<ol style="list-style-type: decimal">
+<li><p>Készíts programot, ami párhuzamosan indít két szálat, amelyek a Hello és a világ szövegeket írják ki felváltva.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>A szálak most karakterenként írják ki a szövegeket.</p></li>
+<li><p>Mint <code>a.</code>, de működjön jól a program.</p></li>
+</ol></li>
+<li><p>Két kecske egy szakadékon átívelő palló két oldalára ér. A palló n hosszú (n parancssori paraméter), a közepén találkoznak. A kecskék <code>0.5</code> és <code>2 mp</code> közötti, véletlenszerű időközönként öklelnek egyet a másikon, így eggyel odébb kerülnek. Mindkét kecskének az a célja, hogy kilökje a másikat a palló túlvégén. A sztenderd kimenetre írj ki minden öklelést, illetve azt, hogy melyik kecske jutott át a pallón.</p>
+<ol style="list-style-type: lower-alpha">
+<li>A feladatnak kétféle jellemző ábrázolása van, találd meg mindkét megoldást.</li>
+</ol></li>
+<li><p>Készíts telnet klienst, ami párhuzamosan képes továbbítani a szerver által küldött üzeneteket a sztenderd kimenetre, illetve a sztenderd bemeneten érkező üzeneteket a szerverhez.</p></li>
+<li><p>Készíts olyan chat alkalmazást, amelyben a két kliensnek nem kell egymásra várnia soronként, hanem bármikor beszélhetnek egymáshoz, és ez azonnal kiíródik a másik kliensnél.</p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li><p>Készíts chat szervert, amelyhez tetszőleges számú kliens kapcsolódhat, illetve bármikor bonthatják is a kapcsolatot. Minden kliens először a nevét közli egy sorban. A kliensek bármikor beszélhessenek, ami azonnal íródjon ki minden kapcsolódott kliensnél.</p></li>
+<li><p>A szerver, ha két parancssori paramétert kap, akkor a megadott gépen/porton levő másik szerverhez kapcsolódik, és névként “kliens” szerver nevet küld át; ebből a másik szerver tudja, hogy szerver kapcsolódott hozzá. A rendszer továbbra is működjön chat-szerverként, azaz bármelyik szerver bármelyik kliense üzenetét kapja meg mindegyik olyan kliens, aki a rendszerbe tartozik.</p></li>
+</ol></li>
+<li><p>Írj egyszerű HTTP szervert. Ehhez ismerni kell a HTTP protokollt, amelyet el lehet olvasni a protokoll dokumentációjából. Ehelyett most kezeld a protokollt fekete dobozként: a szervert úgy készítsd el, hogy megfigyeled egy valódi szerver működését (pl. <code>www.elte.hu</code>), és utánzod azt.</p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>A szerver legyen többszálú.</li>
+</ol></li>
+</ol>
+<h1 id="szerializáció">Szerializáció</h1>
+<ol style="list-style-type: decimal">
+<li><p>Készíts olyan programot, ami egy fájlba véletlenszerűen beleír <code>Integer</code> és <code>Double</code> objektumokat, összesen száz darabot.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Készíts olyan programot, ami képes kiolvasni az előbbi fájlból az értékeket, és megadja, hány <code>Integer</code> és hány <code>Double</code> volt a fájlban, és mi az összegük.</li>
+</ol></li>
+<li><p>Készíts olyan osztályt, amely egy egész számokat tartalmazó bináris fát ábrázol. A fa legyen a lehető legegyszerűbb szerkezetű: csupán három adattag kell hozzá, valamint a hozzájuk tartozó getterek/setterek és két konstruktor.</p>
+<ol style="list-style-type: lower-alpha">
+<li>A főprogramba vegyél fel egy fát 4-5 csúccsal, és mentsd el egy fájlba <code>ObjectOutputStream</code> segítségével, majd töltsd be <code>ObjectInputStream</code>-mel.
+<ul>
+<li>Ha a fának megfelelő konstruktorai vannak, akkor kényelmesen építhető fel: a forráskódban is jól látszik a fa alakja.</li>
+<li>Készíts olyan konstruktort is, amely egy szöveges fájlból beolvas egy teljes bináris fát, és azzal dolgozik a továbbiakban.</li>
+</ul></li>
+<li>A főprogram legyen kliens, amely kapcsolódjon egy szerverhez, és küldje át a fát. A szerver végezzen valamilyen műveletet a fával, és küldje vissza az eredményét. Néhány egyszerű művelet:
+<ul>
+<li>Tükrözd a bináris fa csúcsait: cserélődjön fel a jobb és a bal oldal.</li>
+<li>Alakítsd át az összes csúcsot valamilyen függvény segítségével, pl. növeld meg minden csúcs értékét eggyel.</li>
+<li>Számítsd ki a fa magasságát. (Itt egy számot küld vissza a szerver, az előző két esetben bináris fát.)</li>
+</ul></li>
+</ol></li>
+</ol>
+<h1 id="távoli-metódushívás">Távoli metódushívás</h1>
+<ol style="list-style-type: decimal">
+<li><p>Készíts RMI számológépet. Jegyezz be egy olyan szervert, amely egy számot tárol (a számológépen kijelzett szám), és a számológépek szokásos műveletei érhetőek el rajta (összeadás, szorzás stb.). Mindegyik művelet első operandusa a tárolt szám, a többi operandust meg kell adni a számológépnek. A műveletek eredménye lesz az új tárolt érték, valamint a műveletek visszatérési értéke is ez.</p></li>
+<li>Egy lottójáték a következőképpen van megvalósítva.
+<ul>
+<li>A <code>LottoInterface</code> egyetlen függvény létét írja elő: a <code>boolean nyeroszamE()</code> megadja, hogy az adott számgolyó nyerőszámot takar-e.</li>
+<li>A <a href="lotto-feladat">mellékelt <code>LottoDeploy</code> program</a> első paramétere azt adja meg, összesen hány szám lesz (pl. <code>90</code>), a második paramétere pedig azt, hogy hány nyerőszám (pl. <code>5</code>). A <code>LottoDeploy</code> indítása előtt (ugyanabban a könyvtárban!) futtatni kell az <code>rmiregistry</code> programot, amely a katalógusszolgáltatást biztosítja.</li>
+<li>A <code>LottoDeploy</code> elkészíti a megfelelő számú számgolyót, és bejegyzi őket különböző nevekre a katalógusba, amelyet az <code>12345</code> porton indít el.</li>
+</ul>
+<ol style="list-style-type: lower-alpha">
+<li>Készíts olyan RMI klienst, amely lekérdezi a katalógusból azt, hogy a <code>LottoDeploy</code> milyen nevekre jegyezte be a számgolyókat, majd találd meg a nyerőszámokat.
+<ul>
+<li>A <code>LottoDeploy</code> véletlenszerűen sorsolja ki a nyerőszámokat, ezért újraindítás után más lesz az eredmény.</li>
+</ul></li>
+<li>Készíts saját <code>LottoDeploy</code> implementációt. Ez használjon külső névjegyzéket. Minden esetben működjön jól a program, pl. <code>10</code>-ből <code>10</code> nyerőszám esetén is.</li>
+</ol></li>
+</ol>
+<h1 id="adatbáziskezelés">Adatbáziskezelés</h1>
+<ol style="list-style-type: decimal">
+<li>Készíts olyan programot, amely egy adatbázisban létrehoz egy <code>logins</code> táblát, és abban felvesz néhány felhasználónevet és hozzá tartozó jelszót. (Biztonságos rendszerben nem magát a jelszót tárolnánk.)</li>
+<li>Készíts olyan szervert, amely klienseket fogad egymás után. A kliensek szövegesen elküldik a nevüket és a jelszavukat. A szerver döntse el az adatbázis segítségével, hogy ismert-e a kliens és ha igen, helyes-e a jelszó, és erről küldjön üzenetet a kliensnek.</li>
+<li>Ha a kliens sikeresen bejelentkezett, kezdjen el vásárolni.
+<ul>
+<li>A kliens további sorainak szerkezete az alábbi lehet:
+<ol style="list-style-type: lower-alpha">
+<li><code>kosarba &lt;termék neve&gt; &lt;mennyiség&gt;</code></li>
+<li><code>veglegesit</code></li>
+<li><code>eldob</code></li>
+</ol></li>
+<li>A szerver tartsa számon egy adatbázistáblában, hogy éppen milyen termékek vannak az egyes felhasználók kosarában. Az adatbázis egy másik táblája tartalmazza az eladott termékek összmennyiségét; amikor a felhasználó véglegesíti a bevásárlását, a kosarának tartalma kerüljön át az eladott termékek közé, majd a szerver írja ki az összes eladott áru mennyiségét, és bontsa a kapcsolatot a klienssel.
+<ul>
+<li>Egyszerre több felhasználó is kapcsolódhasson a szerverhez.</li>
+</ul></li>
+<li>A szerver támogathat további műveleteket is, például az alábbiakat.
+<ol style="list-style-type: lower-alpha">
+<li><code>kosarbol &lt;termék neve&gt; &lt;mennyiség&gt;</code></li>
+<li><code>torol &lt;termék neve&gt;</code></li>
+</ol></li>
+</ul></li>
+</ol>
+</body>
+</html>

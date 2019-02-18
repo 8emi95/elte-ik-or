@@ -1,0 +1,178 @@
+https://www.facebook.com/groups/elteikbsc/permalink/809908155771830/
+
+- Jellemezzen két átlátszsósági fajtát (olyat, amelyek nem "rokonok", pl. ne elhelyezési és áthelyezési)
+- Mi a köztes réteg?
+- Mi az interceptor?
+- Milyen fájlmegosztási módokat ismer? Jellemezze őket!
+- (volt kérdés a kódmigrációval kapcsolatban is, de olyan nyakatekert volt, hogy nem is emlékszem rá)
+- Mit tartalmaz egy finger table?
+- Mi az a Lamport-féle időbélyeg?
+kifejtős:
+- Milyen fajtái vannak az elosztott rendszereknek? /kifejtős, részletesen/
+
+150618
+- egyszerű szerver-kliens kommunikáció bemutatása
+- hogyan működnek az overlay peer-to-peer hálózatok
+- hogyan működik a DCE-démon
+- milyen architektúra alapján működnek az ön* rendszerek?
+- plegykálás és anti-entrópia összehasonlítása (előnyökkel, hátrányokkal)
+- kódmigráció esetén hogyan érjük el újra az erőforrásokat (vagy valami ilyesmi)
+- a DNS három szintjének bemutatása
+- iteratív névfeloldás menete
+- mitől lesz egy elosztott rendszer nyitott
+- mutass be két ismert fájlmegosztási módot
+Kifejtős:
+- Milyen hibák lehetnek egy elosztott rendszerben? Hogyan lehet őket megelőzni, kiküszöbölni, javítani?
+- Mutasd be a tanult elnevezési módszereket!
+
+******************************************
+
+https://www.facebook.com/groups/elteikbsc/permalink/995379250558052/
+
+Osszesen 10 kerdes, 4 pontosak. Leiras szerint 1 bekezdesnyit varnak el, ami kb 3 hosszabb mondat. Vicces ugy elmeleti viszgat irni, hogy 40 percig csorompolnek a billentyuzetek, aztan mar csak 1-2 ember irkal neha. Igaz, csak 7-en voltunk :D
+A Sharqos-at kidolgoztam valamennyire, szoval a kerdesei remlenek, de ez elegge masnak tunik.
+- Lamport
+- EJB Bean-fajtak
+- 2PC-3PC kulonbsege
+- Overlay elonye/hatranya
+- Volt valami ilyen, hogy mi a hiba, hibajelenseg, +hibavalami
+- CDN Edge szerver strategiak
+- P2P Tipusai, egyre pelda
+- Tovabbitomutato, skalazas
+- k-hibatures (itt meg volt hozza 2 kifejtos, talan pelda kellett)
+
+160526
+- ACID
+- Interceptor
+- RCP fordítása
+- Járványalapú algoritmusok két fajtája
+- X.500 felépítése
+- Pontosan sorbarendezett csoportcímzés
+- Hatékony módszer szuperpeer elhelyezésére
+- Haszonbérlet és időtartama
+- Egy webszolgáltatás, hogyan tud integrálódni egy kiszólgálóba?
+- Coda rendszer munkamenet szemantikája
+
+******************************************
+
+https://www.facebook.com/groups/elteikbsc/permalink/1328885300540777/
+
+170526
+- Elosztott rendszernek milyen alrendszereit ismersz
+- 2PC vs 3PC
+- Miért a pletykálás algoritmust választjuk az anti-entrópiával szemben (járványprotokollt alkalmazva nagy valószínűséggel nem jutnak el mindenhova a frissítéseink. Miért bem, és mégis miért használjuk ezt a portot?)
+- Szemantikák fájlok elérésére
+- hogyan választjuk meg a szuperpeereket (P2P hálózatban mindegyik gép egyedi azonosítóval rendelkezik)
+- milyen módon nőhet meg egy rendszer mérete
+- Chord struktúra műveletei
+- Cluster vs grid
+
+másik (1 különböző)
+- Mi történik ha a zsarnok-algoritmust kezdeményező csúcs összeomlik miután elküldte az első üzenetet?
+
+15162
+- Ismertess röviden két módszert folyamokon QoS biztosítására.
+- Hogyan működik a zsarnok algoritmus?
+- Mi az a felépülési vonal, mikor van rá szükség és hogyan érjük el?
+- Hogyan csatlakozik az RPC kliens a szerverhez?
+- Ismertesd a particionált tér ábrázolású elosztott rendszert.
+- Milyen feladatokra szoktunk szálakat használni kliensoldalon?
+- Milyen jellemzői vannak az átható (ubiquitous) elosztott rendszereknek?
+- Milyen rendszerekben használunk üzenetközvetítőt (message broker) és mi a feladata?
+- Kódmigráció után milyen módon kapcsolódhat a migrált kód erőforrásokhoz? Milyen feltételek befolyásolják a választást?
+- Hogyan működik a tartalomérzékeny kéréselosztás?
+
+170601
+első kör ha minden igaz:
+- message broker
+- átható rendszer
+- X.500 struktúrája
+- kliens konzisztenciája
+- bizánci generálisok
+- QoS biztosítása
+- szálak a kliensoldalon
+második kör:
+- mi az ACID
+- overlay hálózat, előnyök hátrányok
+- mi történik ha gyűrűben a vezetőválasztás után összeomlik a megválasztott vezető
+- haszonbérlet
+- időbélyeg vektor, mire használjuk
+- objektumszerver részei, feladataik 
+ezekre nem emlékszem pontosan:
+- hálózatban 2 gép közötti kommunikáció idejének hatékony mérése
+- mobil ágens költözés után hogy kapcsolódhat újra 
+(tehát vagy én voltam szerencsétlen vagy már tényleg nem ugyanazok vannak a második vizsgán mint az elsőn :D)
+
+Tavaszi UV-ről:
+- Milyen eltérések vannak az RPC és RMI között?
+- Milyen fajtái léteznek a járványalgoritmusoknak? Mit lehet mondani a hatékonyságukról?
+- Hogyan tér el működésben az állapot nélküli és az állapotteljes szerver? Milyen előnyeik/hátrányaik vannak?
+- Miben térnek el a különböző fájlmegosztási szemantikák?
+- Milyen szintekre szokás tagolni a DNS-t? Milyen fontos paraméterekben térnek el jelentősen a szintek?
+- El szeretnénk érni, hogy folyamataink egy csoportja k-hibatűrő legyen. Milyen feltételek esetén hány tagúnak kell lennie a csoportnak?
+
+170614 kati :3
+- Milyen megközelítései vannak a virtualizációnak?
+- Hogyan szerveződhetnek egy hálózat csúcsai pl. négyzetrács formába önmaguktól?
+- Mi történik, ha egy folyamat összeomlik egy központosított kölcsönös kizárásos rendszerben? 
+- Az edge serverek hogyan biztosíthatnak tartalomszolgáltatást (amelyek az eredetszerveren vannak eredetileg)?
+- Hogyan hasznosítható a pletykálás algoritmusa egy rendszer konzisztensen tartásához?
+- Ha egy elnevezési rendszerben egy mobil ágens átkerül egy másik tartományba, mi történik, és hogyan érhető el ezentúl?
+- Egy rendszerben, amelynek üzenetet küldünk, megváltoznak az üzenetek, amelyek mostantól időbélyeget kapnak. Hogyan vezethető ez be a legkisebb változtatással a programunkba?
+- Milyen stratégiával lehet multicastolni költséghatékonyan egy olyan lokális hálózatban, amiről tudjuk, hogy a kapcsolat nem megbízható?
+
+******************************************
+
+https://www.facebook.com/groups/ELTE.IK.TKK/permalink/1407942725896576/
+
+16171
+- Mi a négyrétegű architektúra?
+- Mi mondható el a stateless bean-ek életciklusáról, hogyan látja ezt a kliens?
+- Mi a különbség az alkalmazás szintű és rendszerszintű kivételek között?
+- JPA-ban hogyan fejezünk ki kétirányú kapcsolatot?
+- Mi a MANDATORY Transaction type? Nyilván az egészet át kell olvasni én is azt teszem éppen, olvasom angolul és ha nem értem fordítom, de fel kell kötni a gatyát az biztos.
+
+15162
+- Soft link/hard link
+- Conit
+- Késleltetett szinkronizált rpc
+- Milyen célból, hogyan Rpc elosztott fájlrendszerben
+- 3 hibalehetőség
+- Tőzsdei műveletek, mi kell hogy allapotteljes szerver legyen
+- Processz és processzor különbségek
+- Idő fogalmát milyen módokon definiáljuk
+- Ketfazisu véglegesítés (2pc) elakad
+- Zsarnok-algoritmus
+- Quality of Service (hogyan javítható???)
+
+******************************************
+
+https://www.facebook.com/groups/elteikbsc/permalink/1007715202657790/
+
+160609
+- Milyen jellemzői vannak az elosztott átható rétegnek?
+- Hasonlíts össze két kölcsönös kizárási algoritmust.
+- Miben hasonlítanak és miben térnek el a szálak, é sa folyamatok?
+- Milyen lehetséges feladatai szoktak lenni a köztesrétegnek?
+- Hogyan keresünk rá egy egyerde, ha a hierachikus névteret használjuk?
+- Hogyan lehet fenntartani a folytonos konzisztenciát?
+- Mit, milyen jellegű részeket, tartalmaznak az objektumszerverek?
+- RPC kommunikáció során milyen problémák léhatnek fel?
+- Mi a hibajelenseg, mi a hiba, illetve a hibaok?
+- Hogyan működnek cluster alapú fájlrendszerek?
+- Az önszervező rendszer működése
+- Logikai gyűrű szervezésben, hogy választunk vezetőt
+- A webszolgáltatásokat hogy segiti a webproxy
+- Hogy épül fel a Recovery Line
+- Jellemezz egy elosztott tároló rendszert
+
+******************************************
+
+https://www.facebook.com/groups/elteikbsc/permalink/899013646861280/
+- Hogyan működik a DCE démon?
+- Adj meg három olyan feltételezést elosztott rendszerrel kapcsolatban, amellyel kényelmes élni, de a valóságban akadályokat gördíthet elénk.
+- Adj példát arra, mikor érdemes kapcsolati végpontot átadni másik gépre (úgy, hogy közben a kapcsolat megmarad).
+
+https://www.facebook.com/groups/ELTE.IK.TKK/permalink/777393288951526/
+- Mi a hármas moduláris redundancia?
+- Egy példa kifejtése az elsődleges másolaton alapuló konzisztencia protokollra?

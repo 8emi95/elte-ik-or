@@ -1,0 +1,32 @@
+water Gardener1_2: 18
+water Gardener2_2: 18
+buy Customer1_2: 11 Rose
+buy Customer2_2: 13 Cherry
+buy Customer3_2: 14 Flax
+buy Customer1_2: 15 Coneflower
+water Gardener1_2: 6
+buy Customer1_2: 20 Verbena
+buy Customer3_2: 21 Verbena
+water Gardener2_2: 4
+buy Customer2_2: 23 Geranium
+buy Customer1_2: 25 Camellia
+water Gardener1_2: 2
+done Customer3_2: 
+buy Customer1_2: 26 Lavender
+done Customer1_2: 
+water Gardener1_2: 1
+buy Customer2_2: 27 Catchfly
+water Gardener2_2: 0
+water Gardener1_2: 0
+buy Customer2_2: fail
+water Gardener2_2: 0
+water Gardener1_2: 0
+buy Customer2_2: fail
+water Gardener1_2: 0
+water Gardener2_2: 0
+buy Customer2_2: fail
+quit Gardener1_2: 
+quit Gardener2_2: 
+quit Customer2_2: 
+Eladott novenyek szama: 10, bevetel: 16119
+Veszteseg: 10 db, osszeg: 16457

@@ -1,0 +1,8 @@
+456
+import java.util.Scanner;
+
+class Teszt {
+    public static void main(String[] args) throws Exception {
+        Scanner sc = new Scanner(new File("myfile.txt"));
+    }
+}

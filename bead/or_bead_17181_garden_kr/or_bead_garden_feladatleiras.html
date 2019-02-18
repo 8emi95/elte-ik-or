@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<h1 id="osztott-rendszerek-beadandó">Osztott rendszerek beadandó</h1>
+<p>Határidő: 2017. december 10. éjfél</p>
+<p>Készítsd el egy kertészet működését szimuláló programot. Az osztályokat a <code>garden</code> csomagba tedd.</p>
+<h2 id="növények-plant.java">Növények: (<code>Plant.java</code>)</h2>
+<p>Készíts el egy növényt reprezentáló osztályt (<code>Plant</code>). A növényeknek van egy azonosítójuk, nvük, áruk, továbbá egy egész szám, ami azt határozza meg, hogy hány másodpercenként kell megöntözni, illetve még egy egész szám (long típusú), ami a legutóbbi öntözés időpontját tárolja ezredmásodpercben.</p>
+<h2 id="távoli-metódushívás-plantfactory.java">Távoli metódushívás (<code>PlantFactory.java</code>)</h2>
+<p>Készíts egy <code>PlantFactory</code> típusú távoli objektumot, amelyet a programon belülről indított <code>8888</code> porton futó registry-be jegyezz be <code>factory</code> néven. Parancssori paraméterként vár egy fájl nevet, ez tartalmazza a növények adatait. Minden növény külön sorba kerül, egy növény adatai vesszővel elválasztva a következőképpen vannak leírva: <code>&lt;azonosító&gt;,&lt;név&gt;,&lt;ár&gt;,&lt;locsolási idő&gt;</code>. A <code>PlantFactory</code> osztály az indulása után olvassa be a fájl tartalmát, hozza létre az adatoknak megfelelő növényeket és tárolja el őket. Az objektum az alábbi távolról hívható metódussal rendelkezik:</p>
+<ul>
+<li>Plant getPlant():
+<ul>
+<li>az eltárolt növények közül visszaadja a beolvasás sorrendjében az elsőt, majd azt eltávolítja a tárolt növények közül<br />
+</li>
+<li>a növény legutóbbi meglocsolási idejét állítsa be arra az időpillanatra, amikor lefut a függvény</li>
+</ul></li>
+</ul>
+<h2 id="kertész-gardener.java">Kertész: (<code>Gardener.java</code>)</h2>
+<p>Parancssori paraméterként vár egy szöveget (ez lesz a neve) és egy egész számot (<code>n</code>). Az utóbbi határozza meg, hogy hány másodpercenként fogja megöntözni a növényeket.</p>
+<ul>
+<li>Csatlakozzon a szerverhez (<code>GardenStore</code>), a kommunikáció szerializált objektumokkal kommunikáljanak (a szövegeket is szerializálva küldjék el).<br />
+</li>
+<li>A kertész <code>n</code> másodpercenként locsolja meg a növényeket, azaz küldje el a következő üzenetet a szervernek: <code>water &lt;kertész neve&gt;</code><br />
+</li>
+<li>Erre válaszként kap egy számot, azon növények számát, amennyit meglocsolt.<br />
+</li>
+<li>Ha <code>3</code> egymást követő alkalommal a válaszként kapott szám <code>0</code>, küldje el a szervernek a <code>quit &lt;kertész neve&gt;</code> üzenetet, majd bontsa a kapcsolatot a szerverrel és álljon le.</li>
+<li>Minden öntözés alkalmával írja egy, a nevével megegyező, .txt kiterjesztésű fájlba a nevét és a kapott választ <code>&lt;név&gt;: &lt;szám&gt;</code> formában. A <code>quit</code> üzenetet is írja bele a fájlba. Pl.:<br />
+Gardener1.txt<br />
+---------------<br />
+Gardener1: 3<br />
+Gardener1: 4<br />
+Gardener1: 0<br />
+Gardener1: 0<br />
+Gardener1: 0<br />
+quit</li>
+</ul>
+<h2 id="vásárló-customer.java">Vásárló: (<code>Customer.java</code>)</h2>
+<p>Parancssori paraméterként vár egy szöveget (ez lesz a neve) és két egész számot (pl.: <code>n</code> és <code>m</code>). Az <code>n</code> adja meg, hogy hány másodpercenként próbál meg növényt venni, az <code>m</code> pedig, hogy hány darab növényt szeretne összesen.</p>
+<ul>
+<li>Csatlakozzon a szerverhez (<code>GardenStore</code>), a kommunikáció szerializált objektumokkal kommunikáljanak (a szövegeket is szerializálva küldjék el).</li>
+<li>A vásárló <code>n</code> másodpercenként próbáljon meg növényt venni, azaz küldje el a következő üzenetet a szervernek: <code>buy &lt;vásárló neve&gt;</code>. Egyszerre csak egy növényt tud venni.</li>
+<li>Sikeres vásárlás esetén egy <code>Plant</code> típusú objektumot kap válaszként, azt a növényt, amit megvett.<br />
+</li>
+<li>Sikertelen vásárlás esetén a <code>fail</code> üzenetet kapja.<br />
+</li>
+<li>A vásárló tarta nyilván, hogy milyen nevű és értékű növényeket vett meg.</li>
+<li>Minden vásárlás után várjon <code>n</code> másodpercet, majd kíséreljen meg újra venni növényt, ha még nem érte el az <code>m</code> értékét.</li>
+<li>Ha elegendő növényt vett, küldje el a szervernek a <code>done &lt;vásárló neve&gt;</code> üzenetet.</li>
+<li>Ha <code>3</code> egymást követő alkalommal <code>fail</code> üzenetet kap, küldje el a szervernek a <code>quit &lt;vásárló neve&gt;</code> üzenetet, majd bontsa a kapcsolatot a szerverrel, akkor is, ha még nem vett elég növényt.</li>
+<li>Minden üzenetváltás alkalmával írja egy, a nevével megegyező, .txt kiterjesztésű fájlba a nevét és a kapott választ (ha sikeres a vásárlás, a növény azonosítóját és nevét írja ki szóközzel elválasztva) <code>&lt;név&gt;: &lt;válasz&gt;</code> formában.<br />
+</li>
+<li>Miután már nem vesz több növényt, írja ki a képernyőre és a fájlba is, hogy mennyi növényt szeretett volna venni, mennyit vett ténylegesen és ezeknek mennyi az összesített értéke a következő alakban <code>Összegzés: &lt;venni kívánt darabszám&gt;, &lt;vett darabszám&gt;, &lt;összérték&gt;</code>. A <code>quit</code> és <code>done</code> üzenetet is írja bele a fájlba.<br />
+Pl.:<br />
+Customer.txt<br />
+---------------<br />
+Customer: 2 Tulipán Customer: 5 Rózsa Customer: fail<br />
+Customer: fail<br />
+Customer: fail<br />
+quit Összegzés: 3, 2, 1400</li>
+</ul>
+<h2 id="kertészet-gardenstore.java">Kertészet: (<code>GardenStore.java</code>)</h2>
+<p>Készíts egy kertészetet reprezentáló osztályt (<code>GardenStore</code>), amely működjön szerverként. A szervert sockettel valósítsd meg az <code>12107</code> porton, a szerver és a kliensek szerializált objektumokkal kommunikáljanak egymással. A szerver egyszerre több klienssel való kapcsolatot tudjon kezelni párhuzamosan.<br />
+Parancssori paraméterként vár egy egész számot, ami a növények számát adja meg és egy fájl nevet, ahova az üzeneteket fogja írni. Az indulásakor hívja meg a bejegyzett <code>PlantFactory</code> objektum <code>getPlant()</code> metódusát annyiszor, amennyi növényt árulni fog a kertészet, és tárolja is el a kapott növényeket.</p>
+<p>Egy kertésztől kapott <code>water &lt;kertész neve&gt;</code> üzenet esetén a következő lépéseket végezze el:</p>
+<ul>
+<li>Az eltárolt, nem elszáradt növényeket locsolja meg, azaz a legutóbbi locsolás idejét írja át az adott pillanatra<br />
+</li>
+<li>Egy növény elszáradtnak minősül és ki kell törölni az eltárolt növények közül, ha a legutóbbi locsolás ideje és az aktuális időpillanat között több, mint annyi idő telt, mint ami a növénynél meg van adva öntözési időként<br />
+</li>
+<li>Küldje vissza a kertésznek, hogy hány darab növényt sikerült megöntözni (az elszáradtakat nem kell számítani)</li>
+</ul>
+<p>Egy vásárlótól kapott <code>buy &lt;vásárló neve&gt;</code> üzenet esetén a következő lépéseket végezze el:</p>
+<ul>
+<li>Az eltárolt növények közül, abban a sorrendben, ahogy a távoli objektumtól megkapta őket, az első, nem elszáradt növényt adja el a vásárlónak, azaz küldje el neki a növényt, majd törölje az eladható növények közül</li>
+<li>Azt, hogy egy növény elszáradt-e ugyanúgy kell ellenőrizni, mint az öntözés esetén</li>
+<li>Ha volt növény, amit el tudott adni a vásárlónak, küldje el neki az adott növényt, egyébként pedig <code>fail</code> üzenetet küldjön</li>
+</ul>
+<p>Ha 5 másodpercig nem csatlakozott újabb kliens, ne fogadja újabb kliens csatlakozását, várja meg, míg a már csatlakozott kliensekkel befejeződik a kommunikáció, majd álljon le.</p>
+<p>Ügyelj a konkurens adatmódosításból eredő problémákra!<br />
+Minden lépésnél írja a parancssori paraméterül kapott fájlba a klienstől kapott üzenetet és az arra küldött választ kettősponttal elválasztva. <code>Plant</code> típusú objektum esetén a növény azonosítóját és nevét írja szóközzel elválasztva.<br />
+Pl.:<br />
+GardenStore.txt<br />
+---------------<br />
+water Gardener1: 4<br />
+buy Customer1: 1 Rózsa<br />
+buy Customer2: 2 Tulipán<br />
+water Gardener2: 2<br />
+done Customer1: </p>
+<h2 id="adatbázis">Adatbázis</h2>
+<p>A szerver (<code>GardenStore</code>) vezesse egy adatbázisban a növényeket. Induláskor mentse el egy táblába a <code>PlantFactory</code> távoli objektumtól kapott növényeket, minden adatukkal együtt (azonosító, név, ár, öntözési idő). Ezek mellett még két mezőt tartalmazzon a tábla:</p>
+<ul>
+<li>az egyik azt adja meg, hogy elszáradt-e a növény<br />
+</li>
+<li>a másik pedig, hogy el lett-e adva a növény</li>
+</ul>
+<p>Frissítse a szerver az adatbázis tartalmát minden eladás után, illetve akkor is, amikor egy növényről meg lett állapítva, hogy elszáradt. Mielőtt leállna a program, írja ki a képernyőre és a fájlba az eladott növények számát, a bevételt és hogy mennyit veszített a kertészet az által, hogy az elszáradt növényeket nem tudta eladni. A kiíratások alakja a következő legyen:<br />
+<code>Eladott novenyek szama: &lt;darabszam&gt;, bevetel: &lt;bevetel&gt;</code><br />
+<code>Veszteseg: &lt;darabszam&gt; db, osszeg: &lt;osszeg&gt;</code></p>
+<h2 id="főprogram-garden.java">Főprogram (<code>Garden.java</code>)</h2>
+<p>Készíts egy főprogramot, ami elindít külön szálakon:</p>
+<ul>
+<li>egy <code>PlantFactory</code>-t, paraméter:<code>input.txt</code>,<br />
+</li>
+<li>egy szervert (<code>GardenStore</code>), paraméter: <code>20</code>, <code>GardenStore.txt</code>, <br />
+</li>
+<li>3 vásárlót (<code>Customer</code>), paraméterek:
+<ul>
+<li><code>Customer1</code>, <code>1</code>, <code>5</code>,<br />
+</li>
+<li><code>Customer2</code>, <code>2</code>, <code>4</code></li>
+<li><code>Customer3</code>, <code>3</code>, <code>2</code></li>
+</ul></li>
+<li>2 kertészt (<code>Gardener</code>), paraméterek:
+<ul>
+<li><code>Gardener1</code>, <code>4</code>,<br />
+</li>
+<li><code>Gardener2</code>, <code>5</code>.</li>
+</ul></li>
+</ul>
+<p>Mindegyik szál elindítása után várakozzon 1 másodpercet.</p>
+</body>
+</html>

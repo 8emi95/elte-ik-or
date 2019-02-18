@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>zh1</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.line-block{white-space: pre-line;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="osztott-rendszerek-zh-2017.12.14.-1600-1800">Osztott rendszerek ZH 2017.12.14. 16:00-18:00</h1>
+<h3 id="feltételek">Feltételek</h3>
+<ul>
+<li>A ZH megoldása során <strong>tilos</strong> más ember segítségét bármilyen módon kérni, vagy vele együttműködni. Pl. mobiltelefon használata tilos.</li>
+<li>Használható eszközök: Canvas, Java dokumentáció, pendrive-on hozott segédanyag.
+<ul>
+<li>Pendrive-ról a ZH megkezdése előtt le lehet tölteni tartalmakat, de a használata ZH közben tilos.</li>
+</ul></li>
+</ul>
+<h3 id="az-elkészítendő-megoldásról">Az elkészítendő megoldásról</h3>
+<ul>
+<li>A kettesért az alapfeladatot kell megoldani, a hármasért ezt kell kibővíteni, minden további jegyért egy választható feladatot kell megoldani. A kettesért és a hármasért megírt osztályokat is az <code>alapfeladat</code> csomagba kell rakni.
+<ul>
+<li>A választható feladat megoldásához az alapfeladatot (kettes+hármas kódját) kell bővíteni. Ehhez másold át az alapfeladat megoldását a megfelelő csomagba (pl. a <code>alapfeladat</code> csomagból a <code>feladatA</code> csomagba), és alakítsd át/bővítsd a megoldást a leírás szerint.</li>
+</ul></li>
+</ul>
+<h3 id="beadás">Beadás</h3>
+<ul>
+<li>A ZH végén a megoldást töltsd is fel a Canvasba.</li>
+</ul>
+<h3 id="tesztelés">Tesztelés</h3>
+<p>Az alapfeladathoz elérhető egy egyszerű tesztfájl, bemeneti fájlok és minta kimenet.<br />
+Parancssorból a futtatás a lefordított osztályokat tartalmazó legkülső csomag mappájának gyökerében állva a következő:</p>
+<ul>
+<li><p>Windows: <code>java -cp .;&lt;path-to-jar&gt;/Teszt.jar alapfeladat.Teszt</code></p></li>
+<li><p>Linux: <code>java -cp .:&lt;path-to-jar&gt;/Teszt.jar alapfeladat.Teszt</code></p></li>
+</ul>
+<p>Akkor fog jól működni a tesztelő, ha a csomag - és osztálynevek, valamint a várakozási idők is a feladatleírásnak megfelelőek. <em>Megjegyzés</em>: a futtatás során a standard outputon megjelenő elvárt minta-kimenethez képest (<code>out.txt</code>) a valós futáskor az egyes sorok kis mértékben felcserélődhetnek, de a sorokban lévő tartalmaknak egyezőnek kell lennie.</p>
+<h2 id="elégséges-szerver">Elégséges: Szerver</h2>
+<p>Készíts egy egyszerű alkalmazást, amely képes kő-papír-olló játékok lebonyolítására. Az osztályok az <code>alapfeladat</code> csomagba kerüljek.</p>
+<p>Készítsd el az <code>alapfeladat.JatekSzerver</code> osztályt, amely tartalmazzon főprogramot. A szerver és a kliensek szövegesen kommunikáljanak egymással.</p>
+<ul>
+<li><p>Amikor a főprogramja elindul, várjon be <code>2</code> klienst a megadott porton (<code>12141</code>). Ezután kezdje meg az alábbi játékot:</p>
+<ul>
+<li><p>A szerver a csatlakozásuk sorrendjében fogadja a kliensek nevét.</p></li>
+<li><p>Minden körben a szerver fogadja mindkét kliens üzenetét, majd válaszol a következők szerint:</p>
+<ul>
+<li><p>Ha valamelyik kliens <code>VEGE</code> üzenetet küldött, továbbítsa ezt a másik kliensnek, majd álljon le.</p></li>
+<li><p>Egyéb esetekben állapítsa meg, melyik kliens nyert a körben és küldje el neki a <code>NYERTEL</code> üzenetet, a másiknak pedig <code>VESZTETTEL</code> üzenetet, döntetlen esetén pedig <code>DONTETLEN</code> üzenetet küldjön mindkettejüknek.</p></li>
+<li><p>A kliensek által küldhető üzenetek: <code>KO</code>, <code>PAPIR</code>, <code>OLLO</code>, <code>VEGE</code>.</p>
+<ul>
+<li>Kő és olló esetén a kő nyer.<br />
+</li>
+<li>Kő és papír esetén a papír nyer.<br />
+</li>
+<li>Papír és olló esetén az olló nyer.</li>
+</ul></li>
+<li><p>Minden lépésben írja ki a standard kimenetre az egyes kliensek nevét, a tőlük kapott üzenetet és a nekik küldött választ:<br />
+<code>Szerver: &lt;név1&gt;: &lt;kliens1-től kapott üzenet&gt; &lt;kliens1-nek küldött üzenet&gt;</code><br />
+<code>Szerver: &lt;név2&gt;: &lt;kliens2-től kapott üzenet&gt; &lt;kliens2-nek küldött üzenet&gt;</code></p></li>
+</ul></li>
+</ul></li>
+</ul>
+<p>A játék során a szerver tartsa nyilván, hogy melyik játékos hány darabot küldött az egyes üzenetekből. A játék végén ezeket írja ki a standard kimenetre <code>&lt;név&gt;: &lt;kő darab&gt; ko, &lt;papír db&gt; papir, &lt;olló db&gt; ollo.</code> alakban.</p>
+<h2 id="hármas-kliens-játék-indítása">Hármas: Kliens, játék indítása</h2>
+<p>Készítsd el az <code>alapfeladat.JatekKliens</code> osztályt, amely két parancssori paramétert vár: az első a kliens neve, a második pedig egy fájlnév. A fájl tartalmazza soronként az üzenetet, amit a szervernek küld majd. Tartalmazzon főprogramot és kapcsolódjon a szerverhez (a localhoston).</p>
+<ul>
+<li><p>Első lépésként küldje el a nevét a szervernek.</p></li>
+<li><p>Minden körben olvasson be egy sort a fájlból és küldje el a szervernek. Ha a <code>VEGE</code> szöveget olvasta be, akkor az üzenet elküldése után álljon le.</p></li>
+<li><p>Egyéb esetben fogadja a szervertől kapott választ. Ha a kapott válasz <code>VEGE</code>, álljon le, egyébként folytassa a játékot.</p></li>
+<li><p>Minden üzenetváltás után várjon 3 tizedmásodpercet.</p></li>
+</ul>
+<p>A kliensnél a standard outputon mindig jelenjen meg a neve, a fájlból beolvasott sor és a szervertől válaszul kapott üzenet <code>&lt;név&gt;: &lt;küldött üzenet&gt; &lt;fogadott üzenet&gt;</code> alakban.</p>
+<p>Készíts egy <code>alapfeladat.StartJatek</code> nevű osztályt, ami külön szálakon elindít egy szervert és két klienst. Az első kliens paraméterei: <code>Jatekos1</code> és <code>input1.txt</code>. A második kliens paraméterei: <code>Jatekos2</code> és <code>input2.txt</code>.<br />
+Mindegyik szál elindítása után várjon fél másodpercet.</p>
+<h2 id="a-távoli-metódushívás">A: Távoli metódushívás</h2>
+<p>Az <code>alapfeladat</code> csomagban levő osztályokat másold a <code>feladatA</code> csomagba.<br />
+Hozz létre egy <code>feladatA.JelGyujtemeny</code> távoli objektumot, amelyet jegyezz be a <code>9999</code> porton futó registry-be.</p>
+<p>A <code>JelGyujtemeny</code> <code>KO</code>, <code>PAPIR</code>, <code>OLLO</code>, <code>VEGE</code> szövegeket tárol és a következő távolról hívható metódusai vannak:</p>
+<ul>
+<li><p>void olvas(String filenev): a paraméterül kapott fájlban levő sorokat beolvassa és eltárolja (a fájl ugyanolyan szerkezetű, mint az előző feladatban).</p></li>
+<li><p>String ujJel(): az eltárolt üzenetszövegek közül visszaadja az elsőt, majd eltávolítja az eltároltak közül.</p></li>
+</ul>
+<p>Alakítsd át a <code>JatekSzerver</code> osztályt, hogy várjon egy parancssori paramétert. Első lépésként csatlakozzon a távoli <code>JelGyujtemeny</code> objektumhoz és hívja meg az olvas() metódusát a paraméterül kapott fájlnévvel.</p>
+<p>Alakítsd át a <code>JatekKliens</code> osztályt, hogy ne fájlból olvassa az elküldendő üzeneteket, hanem a <code>JelGyujtemeny</code> távoli objektumtól kapja meg az egyes üzeneteket az ujJel() metódus meghívásával.</p>
+<p>Módosítsd a <code>StartJatek</code> osztályt, hogy a szerver elindítása előtt egy külön szálon indítsa el a <code>JelGyujtemeny</code>-t, a <code>JatekSzerver</code> paramétere pedig <code>input3.txt</code> legyen.</p>
+<h2 id="b-párhuzamosság">B: Párhuzamosság</h2>
+<p>Az <code>alapfeladat</code> csomagban levő osztályokat másold a <code>feladatB</code> csomagba.<br />
+Alakítsd át a <code>JatekSzerver</code> osztályt úgy, hogy párhuzamosan több játékmenetet is tudjon kezelni. Amint <code>2</code> darab kliens beérkezik, elindítja a hozzájuk tartozó játékmenetet, és rögtön tud újabb <code>2</code> db kliens csatlakozni a szerverhez. A szerver tartsa nyilván, hogy az összes addigi játékmenet közül melyik játékos nyert a legtöbbször (legtöbb üzenetére kapta a <code>NYERTEL</code> választ) és valahányszor egy játékos többször nyer nála, ő legyen az aktuális maximum és írja ki a nevét és azt, hogy hány alkalommal nyert.</p>
+<h2 id="c-adatbázis-kezelés">C: Adatbázis-kezelés</h2>
+<p>Az <code>alapfeladat</code> csomagban levő osztályokat másold a <code>feladatC</code> csomagba.<br />
+Hozz létre egy adatbázist, benne egy táblával, ami tárolja, hogy az egyes játékosok hány alkalommal küldtek kő, papír, illetve olló üzenetet. Frissítsd a tábla tartalmát minden üzenetváltáskor. A játék végén az adatbázis tartalma alapján írd ki, hogy az egyes játékosok hányszor küldtek kő/papír/olló üzenetet (ld. alapfeladat, csak adatbázisból).</p>
+</body>
+</html>

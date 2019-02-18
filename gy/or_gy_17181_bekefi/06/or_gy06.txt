@@ -1,0 +1,13 @@
+6. Gyakorlat
+Készíts olyan programot (NumberWriter.java), ami egy fájlba véletlenszerűen beleír Integer és Double objektumokat, összesen száz darabot.
+Készíts olyan programot (NumberReader.java), ami képes kiolvasni az előbbi fájlból az értékeket, és megadja, hány Integer és hány Double volt a fájlban, és mi az összegük.
+Hozz létre egy síkbeli pontokat reprezentáló osztályt (Point). Legyen egy move(int dx, int dy) nevű metódusa, amivel a pont eltolható a paraméterként megadott értékkel. Definiáld felül a toString() metódust, az eredménye a következő formájú legyen: "(<x koordináta>,<y koordináta>)".
+      Hozz létre egy köröket reprezentáló osztályt (Circle). A kör a középpontjának megfelelő pontot, a            sugarát és a kerületét tárolja. Legyen egy move(int dx, int dy) metódusa, amivel a kör középpontját lehet eltolni. Valamint legyen egy getC() metódusa, ami vmegadja a kör kerületét. Ha már egyszer ki lett számítva a kerület, akkor a metódus legközelebbi hívásakor ne számolja ki újra, csak adja vissza az értékét. Definiáld fölül a toString() metódust, az eredménye a következő formájú legyen: "<középpont>,r: <sugár>, c: <kerület>".
+
+  3. Az előző feladatban létrehozott Circle osztályból készíts két példányt különböző adatokkal és írd ki őket szerializálva egy circle.ser nevű fájlba. Az első körnek told el a középpontját, majd így is írd bele a fájlba. Ezután olvasd be a fájl tartalmát és írd ki a képernyőre a körök adatait.
+
+  4. Hozz létre egy szervert az 11223 porton! A csatlakozott klienstől kap egy kör típusú objektumot szerializálva. Írja ki az adatait a képernyőre, számolja ki a kerületét, majd küldje vissza a kliensnek a kerületet szerializálva. A kliens csatlakozzon a szerverhez, hozzon létre egy kör típusú objektumot és küldje el a szervernek. Írja ki a képernyőre a kör adatait és a szervertől válaszol kapott kerületet.
+
+  5. Alakítsd át a szervert, hogy párhuzamosan több klienssel is tudjon kommunikálni. Ha 10 mp-ig nem csatlakozik új kliens, várja meg a még folyamatban levő kapcsolatok befejeződését, majd álljon le a szerver.
+
+  6. Készíts egy osztályt (StartSockets), ami külön szálakon elindítja a szervert és két klienst. Minden kliens elindítása előtt várjon 1 mp-et

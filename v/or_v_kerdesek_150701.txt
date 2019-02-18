@@ -1,0 +1,152 @@
+Az alábbi kérdések a 2015.07.01-ei vizsgán szereplő ÖSSZES kérdés amit a kérdéseket generáló szerver adhatott. Pontosan így szerepeltek a kérdések a vizsgán.
+A korábbi vizsgákon is szerepeltek ezek a kérdések így elképzelhető, hogy az összes többi vizsgán is csak ezek a kérdések szerepeltek.
+Ha valaki esetleg kidolgozza akkor az feltehetné sharq-ra a megoldásokat. Köszönöm.
+
+Írd le az egyszerű kliens-szerver modellben a kommunikáció menetét.
+
+Hogyan működik (nagyon vázlatosan) a 2PC?
+
+Ismertesd a zsarnok vezetőválasztási algoritmust.
+
+Miben hasonlítanak és miben térnek el a cluster és a grid rendszerek?
+
+Hogyan működik a DCE démon?
+
+Hogyan működik a Network File System (NFS)?
+
+Mi a superpeer? Egy-két mondattal jellemezz olyan rendszert, amelyben megtalálható.
+
+Hogyan működik az iteratív névfeloldás?
+
+Mi az ACID? (Legalább két szempont részletezve, a másik kettőnek legalább a neve.)
+
+Írj le kétfajta fájlmegosztási szemantikát.
+
+Ismertesd a vezetőválasztási algoritmust gyűrűben.
+
+Mi a haszonbérlet?
+
+Milyen az overlay peer-to-peer hálózatok felépítése?
+
+Hogyan működik az elsődleges másolaton alapuló protokoll távoli írással?
+
+Mi a konzisztens metszet? Mi a felépülési vonal?
+
+Milyen lépésekből áll az RPC hívás _vissza_ iránya? (Nem az "oda".)
+
+Hogyan működik az elsődleges másolaton alapuló protokoll helyi írással?
+
+Mi az ISO/OSI modell alsó három rétegének feladata?
+
+Mi a Lamport-féle időbélyeg?
+
+Miben tér el az anti-entrópia és a pletykálás alapú járványalgoritmus? (Előnyökkel, hátrányokkal.)
+
+Milyen két fő megközelítés létezik a virtualizációra? Az egyik rövid jellemzésével.
+
+Adj meg három olyan feltételezést elosztott rendszerrel kapcsolatban, amellyel kényelmes élni, de a valóságban akadályokat gördíthet elénk. 
+
+Mi a köztesréteg?
+
+Jellemezd három szempont szerint, hogyan különbözik a DNS névtér három szintje.
+
+Milyen az önszervező rendszerek általános architektúrája?
+
+Egy-egy mondattal jellemezz kétfajta átméretezhetőséget.
+
+Mi a kontextusváltás?
+
+
+Mi jellemzi a nyitott rendszereket?
+
+Mi az objektumadapter feladata? 
+
+Adj példát arra, mikor érdemes kapcsolati végpontot átadni másik gépre (úgy, hogy közben a kapcsolat megmarad).
+
+Mi az interceptor?
+
+Mi jellemzi az állapotteljes szervereket?
+
+Mi az "overlay"?
+
+Ismertess (nagyon) vázlatosan egy strukturált peer-to-peer rendszert.
+
+Ismertesd a központosított kölcsönös kizárási algoritmust.
+
+Mi a gyenge és mi az erős mobilitás?
+
+Hogyan kezelhetőek a hivatkozások RPC hívás során?
+
+Ismertess egy technikát, amelynek célja az átméretezhetőség megvalósítása.
+
+Adj módszert arra, hogyan válasszuk meg sok klienst kiszolgáló szerverek helyeit (közel) optimálisan nagy hálózatban.
+
+Nevezz meg legalább kétfajta feladatot, amely során kódmigráció történik, és részletezd az egyiket.
+
+Mit tartalmaz a Chord adatábrázolás egy finger table-je?
+
+Ismertesd a zsetongyűrű alapú kölcsönös kizárási algoritmust.
+
+Hogyan működnek a strukturálatlan peer-to-peer rendszerek?
+
+Hogyan állíthatóak vissza az adataink két lemezt tartalmazó stabil tárból?
+
+Mi a szuperszerver?
+
+Replikátum frissítése során milyen adatokat küldhetünk át a szerverek között?
+
+Mi jellemzi az időleges, szinkron kommunikációt?
+
+Mi a folyam? (Fontosabb jellemzőkkel.)
+
+Hogyan működik a Berkeley-algoritmus?
+
+Mi a szállítási réteg két fő protokollja, és ezeknek mik a főbb jellemzői?
+
+Milyen probléma merül fel, ha többszörözött objektumok hívják egymást, és hogyan lehet megoldani?
+
+Milyen lépésekből áll a socket kommunikáció? (Sorrenddel.)
+
+Hogyan működik a testületalapú protokoll? Milyen feltételek kikötésével lehet garantálni a helyességet? 
+
+Mi a továbbítómutató?
+
+Hogyan működik a rekurzív névfeloldás?
+
+Milyen három rétegbe szokás osztani az alkalmazásokat?
+
+Egy-egy mondattal jellemezz kétfajta (nem rokon jellegű) átlátszóságot.
+
+Mikor milyen megoldást érdemes választani arra, hogy a migrált kód hogyan maradjon kapcsolatban az erőforrásokkal? (vagy a feltételek, vagy a megoldások részletezésével)
+
+Adj módszert arra, hogyan válasszuk meg, melyik szerverek tároljanak egy adott fájlt.
+
+
+
+
+
+
+
+10 pontos kérdések:
+
+Milyen módszerekkel lehet az elosztott rendszer óráit összehangolni? Miért van erre szükség, és milyen mértékben az egyes esetekben?
+
+Milyen módon hibásodhat meg egy elosztott rendszer? Milyen módokon lehet megelőzni, kiküszöbölni, javítani a hibákat?
+
+Hasonlítsd össze távoli szolgáltatások igénybe vételének különböző modelljeit: kliens-szerver, RPC, RMI, MOM.
+
+Milyen főbb fajtái vannak az elosztott rendszereknek? Milyen feladatok megoldására alkalmasak, milyen szerveződésűek?
+
+Milyen jellegzetességei vannak a webkiszolgáló rendszereknek?
+
+Milyen módokon lehet információt elterjeszteni a rendszerben? (multicast, járvány)
+
+Mik a szálak és mik a folyamatok? Hogyan viszonyulnak egymáshoz? Mikor melyiket érdemes alkalmazni? Hogyan jelennek meg kliens-szerver kapcsolatokban?
+
+Hasonlítsd össze a tanult elnevezési rendszereket.
+
+Milyen átfogó célokat fogalmazhatunk meg elosztott rendszerekkel kapcsolatban? Milyen fő szempontok tartoznak a célokhoz? Mennyire megvalósíthatóak a célok, milyen akadályok merülnek fel?
+
+Milyen fajta elosztott fájlrendszerek léteznek? Ezeknek melyek a fő jellemzői, hogyan működnek?
+
+Milyen kérdések merülhetnek fel elosztott rendszer konzisztenciájával kapcsolatban? Milyen algoritmusok/módszerek alkalmazhatók a konzisztencia biztosítására?

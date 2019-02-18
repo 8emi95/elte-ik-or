@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>zh2</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.line-block{white-space: pre-line;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="osztott-rendszerek-zh-2017.12.14.-1800-2000">Osztott rendszerek ZH 2017.12.14. 18:00-20:00</h1>
+<h3 id="feltételek">Feltételek</h3>
+<ul>
+<li>A ZH megoldása során <strong>tilos</strong> más ember segítségét bármilyen módon kérni, vagy vele együttműködni. Pl. mobiltelefon használata tilos.</li>
+<li>Használható eszközök: Canvas, Java dokumentáció, pendrive-on hozott segédanyag.
+<ul>
+<li>Pendrive-ról a ZH megkezdése előtt le lehet tölteni tartalmakat, de a használata ZH közben tilos.</li>
+</ul></li>
+</ul>
+<h3 id="az-elkészítendő-megoldásról">Az elkészítendő megoldásról</h3>
+<ul>
+<li>A kettesért az alapfeladatot kell megoldani, a hármasért ezt kell kibővíteni, minden további jegyért egy választható feladatot kell megoldani. A kettesért és a hármasért megírt osztályokat is az <code>alapfeladat</code> csomagba kell rakni.
+<ul>
+<li>A választható feladat megoldásához az alapfeladatot (kettes+hármas kódját) kell bővíteni. Ehhez másold át az alapfeladat megoldását a megfelelő csomagba (pl. a <code>alapfeladat</code> csomagból a <code>feladatA</code> csomagba), és alakítsd át/bővítsd a megoldást a leírás szerint.</li>
+</ul></li>
+</ul>
+<h3 id="beadás">Beadás</h3>
+<ul>
+<li>A ZH végén a megoldást töltsd is fel a Canvasba.</li>
+</ul>
+<h3 id="tesztelés">Tesztelés</h3>
+<p>Az alapfeladathoz elérhető egy egyszerű tesztfájl, bemeneti fájlok és minta kimenet.<br />
+Parancssorból a futtatás a lefordított osztályokat tartalmazó legkülső csomag mappájának gyökerében állva a következő:</p>
+<ul>
+<li><p>Windows: <code>java -cp .;&lt;path-to-jar&gt;/Teszt.jar alapfeladat.Teszt</code></p></li>
+<li><p>Linux: <code>java -cp .:&lt;path-to-jar&gt;/Teszt.jar alapfeladat.Teszt</code></p></li>
+</ul>
+<p>Akkor fog jól működni a tesztelő, ha a csomag - és osztálynevek, valamint a várakozási idők is a feladatleírásnak megfelelőek. <em>Megjegyzés</em>: a futtatás során a standard outputon megjelenő elvárt minta-kimenethez képest (<code>out.txt</code>) a valós futáskor az egyes sorok kis mértékben felcserélődhetnek, de a sorokban lévő tartalmaknak egyezőnek kell lennie.</p>
+<h2 id="elégséges-távoli-metódushívás">Elégséges: Távoli metódushívás</h2>
+<p>Készíts egy egyszerű alkalmazást, amely képes kő-papír-olló játékok lebonyolítására. Az osztályok az <code>alapfeladat</code> csomagba kerüljenek.</p>
+<p>Készítsd el a <code>alapfeladat.JatekSzerver</code> távoli objektumot, amelyet jegyezz be a <code>9999</code> porton futó registry-be. Parancssori paraméterként várjon egy fájlnevet. A bemeneti szöveges fájl soronként tartalmaz egy szöveget (<code>KO</code> vagy <code>PAPIR</code> vagy <code>OLLO</code>).</p>
+<ul>
+<li>Az elindulásakor olvassa be a fájl első sorát és tárolja el, ezzel a jellel fog játszani kezdetben a kliensek ellen.</li>
+</ul>
+<p>A következő távolról hívható metódusa legyen:</p>
+<ul>
+<li><p>String jatszik(String nev, String uzenet): Paraméterekként a kliens megadja a nevét és az általa küldött jelet. A kliens által küldött üzenet <code>KO</code>, <code>PAPIR</code>, illetve <code>OLLO</code> lehet. A távoli objektum a következő szabályok szerint állapítja meg, hogy ő nyert vagy a kliens:</p>
+<ul>
+<li>Kő és olló esetén a kő nyer.<br />
+</li>
+<li>Kő és papír esetén a papír nyer.<br />
+</li>
+<li>Papír és olló esetén az olló nyer.<br />
+Döntetlen esetén a válasz <code>DONTETLEN</code>, ha a kliens vesztett, akkor <code>VESZTETTEL</code>, ha pedig a kliens nyert, akkor <code>NYERTEL</code>. Mindegyik esetben az üzenetet szövegesen (nem szerializálva) kell elküldeni. Amennyiben a kliens nyert, a távoli objektum olvassa be a fájl következő sorát és az legyen onnantól a jel, amivel játszik. Ha nem a kliens nyert (azaz döntetlen volt, vagy a szerver nyert), akkor a szerver továbbra is a ugyanazzal a jellel játszik tovább.<br />
+Minden alkalommal írja ki a képernyőre a paraméterül kapott nevet, az üzenetet és a választ <code>Szerver: &lt;nev&gt;: &lt;uzenet&gt; &lt;valasz&gt;</code> alakban.</li>
+</ul></li>
+</ul>
+<h2 id="hármas-kliens-játék-indítása">Hármas: Kliens, játék indítása</h2>
+<p>Készítsd el a <code>alapfeladat.JatekKliens</code> osztályt az, amely két parancssori paramétert vár: az első a kliens neve, a második pedig egy fájlnév. A fájl tartalmazza soronként az üzenetet, amit a szervernek küld majd. Tartalmazzon főprogramot, amely kapcsolódjon a <code>9999</code> porton bejegyzett távoli objektumhoz.</p>
+<ul>
+<li><p>Minden körben olvasson be egy sort a fájlból és küldje el a távoli objektumnak a jatszik() metódusa meghívásával. Ha a <code>VEGE</code> szöveget olvasta be, akkor azt az üzenetet ne küldje el és álljon le.</p></li>
+<li><p>Minden üzenetküldés után várjon 3 tizedmásodpercet.</p></li>
+</ul>
+<p>A kliensnél a standard outputon mindig jelenjen meg a neve, a fájlból beolvasott sor és a szervertől válaszul kapott üzenet <code>&lt;név&gt;: &lt;küldött üzenet&gt; &lt;fogadott üzenet&gt;</code> alakban.</p>
+<p>Készíts egy <code>alapfeladat.StartJatek</code> nevű osztályt, ami külön szálakon elindít egy <code>JatekSzerver</code>-t és két <code>JatekKliens</code>-t. A szerver paramétere <code>input.txt</code>, az első kliens paraméterei: <code>Jatekos1</code> és <code>input1.txt</code>. A második kliens paraméterei: <code>Jatekos2</code> és <code>input2.txt</code>.<br />
+A távoli objektum elindítása után várjon <code>1</code> másodpercet, a többi szál elindítása után pedig fél másodpercet.</p>
+<h2 id="a-socketek">A: Socketek</h2>
+<p>Az <code>alapfeladat</code> csomagban levő osztályokat másold a <code>feladatA</code> csomagba.<br />
+Alakítsd át a <code>JatekSzerver</code> osztályt, hogy távoli objektum mellett socket szerverként is működjön az <code>12142</code> porton. A szerver és a kliens szövegesen kommuinkálnak egymással.<br />
+Minden csatlakozó kliensnek indítson egy külön szálat, majd várakozzon a következő kliens csatlakozására.</p>
+<ul>
+<li><p>A klienstől első lépésben megkapja a nevét.</p></li>
+<li><p>Minden körben fogadja a kliens által küldött üzenetet és járjon el az alapfeladatban leírtak szerint. A választ küldje el a kliensnek.</p></li>
+<li><p>Ha a klienstől a <code>VEGE</code> üzenetet kapja, akkor a játékmenet véget ér, nem kell megállapítani ebben az esetben, hogy ki nyert.</p></li>
+</ul>
+<p>Készíts egy <code>SocketKliens</code> osztályt, amely az <code>12142</code> porton futó szerverhez csatlakozzon. Csatlakozás után küldje el a nevét. Ezután szövegesen küldje el a fájlból beolvasott sort, majd fogadja a választ. Ha a fájlból a <code>VEGE</code> sort olvasta be, azt még küldje el a szervernek, majd álljon le.</p>
+<h2 id="b-szerializáció">B: Szerializáció</h2>
+<p>Az <code>alapfeladat</code> csomagban levő osztályokat másold a <code>feladatB</code> csomagba.<br />
+Hozz létre egy <code>Uzenet</code> nevű szerializálható osztályt, ami tárolja a kliens nevét, aki az üzenetet küldte, az általa küldött üzenetet és a választ.<br />
+Írd át a <code>JatekSzerver</code> <code>jatszik()</code> metódusát úgy, hogy paraméterül egy <code>Uzenet</code> típusú objektumot várjon és ilyen legyen a visszatérési típusa is. A metóduson belül állítsa be a kapott üzenet válasz adattagjának értékét.</p>
+<p>Alakítsd át a <code>JatekKliens</code> osztályt úgy a távoli objektum <code>jatszik()</code> metódusának meghívásakor egy <code>Uzenet</code> típusú paramétert adjon át, ami tartalmazza a nevét és a fájlból beolvasott sort, valamint a válasz fogadásakor is kezelje, hogy String helyett <code>Uzenet</code>-et kap.<br />
+A kliens minden lépésben írja az üzenet objektumot szerializálva egy, a játékos nevével megegyező fájlba, a képernyőre nem kell írnia. A játék végén, mielőtt leállna, írja ki a standard kimenetre a fájl tartalmát <code>&lt;név&gt;: &lt;üzenet&gt; &lt;válasz&gt;</code> alakban.</p>
+<h2 id="c-adatbázis-kezelés">C: Adatbázis-kezelés</h2>
+<p>Az <code>alapfeladat</code> csomagban levő osztályokat másold a <code>feladatC</code> csomagba.<br />
+Hozz létre egy adatbázist, benne egy táblával, amiben a <code>JatekSzerver</code> tárolja, hogy az egyes üzenetekre milyen választ küldött. A táblában szerepeljen a játékos neve, az általa küldött üzenet és a kapott válasz. Minden üzenetváltáskor frissítse a tábla tartalmát. Valahányszor a <code>JatekSzerver</code> nyer, az adatbázis tartalma alapján számolja ki és írja ki a képernyőre, hogy eddig hány alkalommal nyert a szerver.</p>
+</body>
+</html>

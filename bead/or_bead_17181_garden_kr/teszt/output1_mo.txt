@@ -1,0 +1,22 @@
+water Gardener1_1: 7
+water Gardener2_1: 7
+buy Customer1_1: 3 Yucca
+buy Customer1_1: 5 Artichoke
+water Gardener2_1: 2
+buy Customer1_1: 8 Geranium
+water Gardener1_1: 1
+buy Customer1_1: 10 Lavender
+water Gardener2_1: 0
+buy Customer1_1: fail
+buy Customer1_1: fail
+water Gardener1_1: 0
+water Gardener2_1: 0
+buy Customer1_1: fail
+quit Customer1_1: 
+water Gardener2_1: 0
+water Gardener1_1: 0
+quit Gardener2_1: 
+water Gardener1_1: 0
+quit Gardener1_1: 
+Eladott novenyek szama: 4, bevetel: 7223
+Veszteseg: 6 db, osszeg: 9225

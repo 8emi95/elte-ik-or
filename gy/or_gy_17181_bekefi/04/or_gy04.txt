@@ -1,0 +1,21 @@
+4. Gyakorlat
+1. Hozz létre 5 szálat, mindegyik írjon ki valamit a képernyőre. Várd meg a szálak futásának befejeződését, majd írd ki, hogy "A program lefutott".
+
+2. Készíts egy Szalak nevű Java osztályt, amely parancssori argumentumában egy egész számot vár. Jelöljük most ezt a számot n-el!
+A program hozzon létre és indítson el n db szálat 1,2..n sorszámokkal, a következő működéssel.
+
+Minden szál (n-sorszam+1)-szer ismétli a következő két lépést:
+
+várakozik a sorszámának megfelelő másodpercet
+kiírja a szál nevét
+3. Készíts programot, ami elindít 10 szálat. A szálak egy közös változó értékét csökkentik egyesével, a kezdeti értéke 100. Ha ez az érték eléri a 0-t, akkor már ne csökkentsék tovább, érjen véget a szálak futása. A szálak lefutása után írd ki a képernyőre, hogy "A program befejezodott". Ügyelj a párhuzamosságból adódó problémákra!
+
+4. Készíts egy szerver-kliens alkalmazást, ahol a szerver egymással párhuzamosan több klienssel is kommunikál (külön szálakon). Minden kliens küldje el a számokat csökkenő sorrendben 10-től 0-ig, majd álljon le.
+
+5. Indíts el egy szerver socketet az 12345 porton! A fájl neve legyen Server.java. A szerver, mikor elindult, sorsoljon egy számot 1 és 100 között, majd írja ki. A kliensek feladata az, hogy kitalálják mi ez a szám. 
+Minden csatlakozó kliensnek indíts egy külön szálat. A kliensek átküldenek egy számot a szervernek. Ha a szerver által tárolt szám kisebb, mint ez az érték, akkor küldje vissza azt az üzenetet, hogy "Kisebb", ha nagyobb, akkor azt, hogy "Nagyobb". Ha pedig a két szám egyenlő, akkor az "Eltalaltad" üzenetet küldje vissza és fejeződjön be a szál futása. Ha szerverhez 10 mp-ig nem csatlakozik kliens, akkor álljon le a szerver és írja ki a képernyőre, hogy leállt. Ehhez használd a setSoTimeout() metódust. A leállásnál ne írjon ki hibaüzenetet.
+
+A kliens (TippKliens.java) működése: Csalakozzon a szerverhez. Addig küldi a tippeit a szervernek,
+míg ki nem találta azt a számot, amit a szerver tárol. Minden alkalommal véletlenszerűen sorsol egy számot 1 és 100 között és ezt küldi el. Ha eltalálta, befejeződik a futása.
+
+Szorgalmi: A kliens ne véletlenszerűen sorsolja a tippjeit, hanem a szerver válaszától függően szűkítse az intervallumot, ahonnan sorsolja a számot.

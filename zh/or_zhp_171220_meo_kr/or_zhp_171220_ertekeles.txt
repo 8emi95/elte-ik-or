@@ -1,0 +1,8 @@
+ZH értékelése:
+
+Jegy: 3
+Gyakjegy: 3
+
+Jó megoldás, csak két kisebb hiba van. A szerver oldalon mindig a szónak az aktuális állapotát kéne visszaküldeni, amiben be van helyettesítve az összes eddig kitalált betű. Ezzel szmeben nálad mindig csak az éppen aktuális tippet helyettesíti be.
+A kliensnél csak a hibás tippekre van megadva felső korlát, a nem hibás tippeket ebbe nem kéne beleszámítani.
+Békefi Bianka Flóra B3XFUW , 2017. dec 29, 14:06

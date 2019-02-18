@@ -1,0 +1,45 @@
+water Gardener1_3: 8
+water Gardener2_3: 8
+water Gardener3_3: 8
+water Gardener1_3: 8
+buy Customer1_3: 33 Freesia
+buy Customer2_3: 34 Cypress
+buy Customer3_3: 35 Bellflower
+water Gardener1_3: 5
+buy Customer2_3: 36 Yarrow
+buy Customer1_3: 37 Lilac
+buy Customer4_3: 38 Jasmine
+buy Customer2_3: 39 Willow
+water Gardener3_3: 1
+water Gardener1_3: 1
+buy Customer2_3: 40 Walnut
+buy Customer1_3: fail
+buy Customer2_3: fail
+water Gardener2_3: 0
+buy Customer3_3: fail
+water Gardener1_3: 0
+buy Customer2_3: fail
+buy Customer1_3: fail
+buy Customer2_3: fail
+water Gardener3_3: 0
+buy Customer4_3: fail
+water Gardener1_3: 0
+quit Customer2_3: 
+buy Customer1_3: fail
+buy Customer3_3: fail
+water Gardener1_3: 0
+quit Customer1_3: 
+water Gardener3_3: 0
+quit Gardener1_3: 
+buy Customer4_3: fail
+water Gardener2_3: 0
+buy Customer3_3: fail
+water Gardener3_3: 0
+buy Customer4_3: fail
+quit Customer3_3: 
+quit Gardener3_3: 
+water Gardener2_3: 0
+quit Customer4_3: 
+quit Gardener2_3: 
+Eladott novenyek szama: 8, bevetel: 13892
+Veszteseg: 2 db, osszeg: 3736

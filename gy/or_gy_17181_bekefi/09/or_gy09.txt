@@ -1,0 +1,21 @@
+9. Gyakorlat
+Az adatbáziskezeléshez szükséges file letölthető innen: hsqldb-2.4.0.jar [https://canvas.elte.hu/courses/1115/files/32474/download?wrap=1]
+
+1. Készíts olyan programot, amely egy adatbázisban létrehoz egy people nevű táblát, és abban felvesz néhány azonosítót és hozzá tartozó jelszót.
+
+2. Alakítsd át a people táblát úgy, hogy az emberek azonosítója és jelszava mellett a nevüket is tárolja.
+   
+
+3. Készíts olyan szervert, amely klienseket fogad egymás után. A kliensek szövegesen elküldik a nevüket és a jelszavukat. A szerver döntse el az adatbázis segítségével, hogy ismert-e a kliens és ha igen, helyes-e a jelszó, és erről küldjön üzenetet a kliensnek. A kliens és a szerver közötti kommunikációt socketekkel valósítsd meg.
+   
+
+4. Készíts egy RMI alkalmazást!
+  A program az 12345 porton indítson el egy névszolgáltatást (registry), amibe jegyezzen be "adatb" néven egy távoli objektumot. Az interface neve legyen AdatbInterface!
+A következő művelet legyen elérhető az objektumon:
+    - int nextNumber(): visszaad egy számot 1 és 10 között. A véletlenszám generáláshoz vegyél fel egy Random típusú adattagot az osztályba és állítsd be a seed-jét 11111-re (pl.: private Random rand = new Random(11111))
+
+  A kliens hozzon létre egy adatbázist, benne egy táblát. A tábla neve legyen SZAMOK. Két mezőt tartalmazzon, egy SZAM nevűt (típusa int) és egy DB nevűt (típusa int). A SZAM jelöli az adott számot, a DB pedig, hogy a távoli objektum hányszor sorsolta azt a számot.
+  Töltsd fel a táblát 1-től 10-ig a számokkal úgy, hogy kezdetben a DB mindenhol 0 legyen (insert).        
+
+  A kliens (AdatbClient) 15 alkalommal hívja meg a távoli objektum nextNumber() metódusát. Minden alkalommal a táblában növelje meg az ahhoz a számhoz tartozó DB mező értékét eggyel (update), amelyik számot a metódus megadta.
+  Ha véget értek az iterációk, írd ki a tábla tartalmát (select). Ezután töröld ki a táblából azokat a sorokat, amilyen szám egyszer sem lett kisorsolva (delete), majd írd ki újra a tábla tartalmát.

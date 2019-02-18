@@ -1,0 +1,73 @@
+water Gardener1_5: 31
+water Gardener2_5: 31
+water Gardener3_5: 31
+water Gardener4_5: 31
+water Gardener5_5: 31
+water Gardener1_5: 31
+buy Customer1_5: 47 Lavender
+buy Customer2_5: 48 Sunflower
+buy Customer3_5: 49 Camellia
+buy Customer2_5: 50 Oak
+buy Customer1_5: 51 Sunflower
+buy Customer4_5: 52 Olive
+water Gardener1_5: 12
+water Gardener4_5: 12
+water Gardener3_5: 12
+buy Customer2_5: 56 Waterlily
+water Gardener2_5: 11
+buy Customer5_5: 58 Maple
+water Gardener5_5: 10
+buy Customer6_5: 61 Maple
+buy Customer2_5: 62 Raspberry
+buy Customer1_5: 63 Petunia
+buy Customer2_5: 68 Daisy
+buy Customer5_5: 69 Jasmine
+water Gardener1_5: 5
+buy Customer3_5: 72 Lilac
+done Customer2_5: 
+buy Customer1_5: 75 Violet
+buy Customer4_5: 81 Parsley
+water Gardener4_5: 2
+buy Customer5_5: 82 Willow
+water Gardener5_5: 1
+water Gardener3_5: 1
+buy Customer1_5: 83 Rose
+water Gardener1_5: 0
+buy Customer6_5: fail
+water Gardener2_5: 0
+buy Customer5_5: fail
+done Customer3_5: 
+buy Customer1_5: fail
+buy Customer4_5: fail
+water Gardener4_5: 0
+buy Customer5_5: fail
+water Gardener5_5: 0
+water Gardener1_5: 0
+buy Customer1_5: fail
+water Gardener3_5: 0
+buy Customer5_5: fail
+buy Customer6_5: fail
+buy Customer1_5: fail
+buy Customer4_5: fail
+water Gardener1_5: 0
+water Gardener4_5: 0
+water Gardener2_5: 0
+quit Customer5_5: 
+water Gardener5_5: 0
+quit Customer1_5: 
+quit Gardener1_5: 
+water Gardener3_5: 0
+buy Customer4_5: fail
+water Gardener4_5: 0
+buy Customer6_5: fail
+water Gardener5_5: 0
+water Gardener2_5: 0
+quit Customer4_5: 
+quit Gardener4_5: 
+water Gardener3_5: 0
+quit Gardener5_5: 
+quit Customer6_5: 
+quit Gardener2_5: 
+quit Gardener3_5: 
+Eladott novenyek szama: 18, bevetel: 32635
+Veszteseg: 22 db, osszeg: 36561

@@ -1,0 +1,31 @@
+8. Gyakorlat
+1. Egy lottójáték a következőképpen van megvalósítva:
+
+A LottoInterface egyetlen függvény létét írja elő: a boolean nyeroszamE() megadja, hogy az adott számgolyó nyerőszámot takar-e.
+A mellékelt LottoDeploy Megtekintés új ablakbanprogramMegtekintés új ablakban első paramétere azt adja meg, összesen hány szám lesz (pl. 90), a második paramétere pedig azt, hogy hány nyerőszám (pl. 5).
+A LottoDeploy elkészíti a megfelelő számú számgolyót, és bejegyzi őket különböző nevekre a katalógusba, amelyet az 12345 porton indít el. LottoImpl letölthető innen: LottoImpl.javaMegtekintés új ablakban
+Készíts olyan RMI klienst, amely lekérdezi a katalógusból azt, hogy a LottoDeploy milyen nevekre jegyezte be a számgolyókat, majd találd meg a nyerőszámokat. Segítség: nézd meg a Registry osztály metódusait.
+A LottoDeploy véletlenszerűen sorsolja ki a nyerőszámokat, ezért újraindítás után más lesz az eredmény.
+Készíts saját LottoDeploy implementációt. Ez használjon külső registry-t. Minden esetben működjön jól a program, pl. 10-ből 10 nyerőszám esetén is.
+2. Készítsd el egy RMI alkalmazás szerver és kliens oldalát!
+A feladat egy iskolai helyzetet modellez: a diákok feladatokat csinálnak, a tanár pedig kijavítja a befejezett feladatokat.
+A program az 12345 porton indítson el egy névszolgáltatást (registry), amibe jegyezzen be
+"myserver" néven egy távoli objektumot. Az interface neve legyen ServerInterface!
+A következo muveletek legyenek elérhetoek az objektumon:
+    int elkezd(int id):
+        - a hallgató megadja az azonosítóját, megkapja a feladatszámot, a szerver eltárolja a diák azonosítóját és a feladatszámot
+        - a feladat száma egy 1 és 10 közötti véletlen szám legyen
+        - ha egy diák már elkezdett egy feladatot, és még nem fejezte be vagy nem lett kijavítva, de újra meghívja ezt a függvényt, akkor a már elkezdett feladatának a számát kapja vissza
+        - írja ki a hallgató azonosítóját és a feladat sorszámát: pl.: Elkezd: azonosito: 2, feladat: 7
+    void befejez(int id): 
+        - ha a hallgató elkészült a feladattal, meghívja ezt a függvényt, a szerver pedig beállítja a hallgató feladatának állapotát befejezettre
+        - amennyiben a hallgatónak nincs még be nem fejezett feladata, írja ki a következo üzenetet: A [azonosito] azonositoju hallgato meg nem kezdett el feladatot!
+        - írja ki a hallgató azonosítóját és a feladat sorszámát: pl.: Befejez: azonosito: 2, feladat: 7
+    void kijavit(): 
+        - a tanár kijavítja az elkeszült! feladatokat, és a kijavítottakat kitörli az adatszerkezetbol, ahol addig tárolta (lista, hashmap, stb.)
+        - írja ki a kijavított hallgatók azonosítóját és a feladat sorszámát: pl.:Kijavit: azonosito: 2, feladat: 7      
+Ügyelj a konkurens hozzáférésbol eredo problémákra!
+
+A kliens muködése:
+    - elindít 5 szálat a hallgatóknak, ők néhány másodperc után elkezdenek egy feladatot, majd idővel befejezik és ezt ismétlik pár alkalommal. Az másodperceket az 1-2 intervallumból sorsold véletlenszerűen. Minden hallgató 8 alkalommal ismételje meg a tevékenységét.
+    - elindít egy másik szálat a tanárnak, ő 1-3 másodpercenként kijavítja a befejezett feladatokat, ezt 10 alkalommal ismétli meg

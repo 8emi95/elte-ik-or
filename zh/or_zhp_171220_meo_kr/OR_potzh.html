@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>potzh</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.line-block{white-space: pre-line;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="osztott-rendszerek-pótzh-2017.12.20.-1000-1200">Osztott rendszerek PótZH 2017.12.20. 10:00-12:00</h1>
+<h4 id="feltételek">Feltételek:</h4>
+<ul>
+<li>A ZH megoldása során <strong>tilos</strong> más ember segítségét bármilyen módon kérni, vagy vele együttműködni. Pl. mobiltelefon használata tilos.</li>
+<li>Használható eszközök:
+<ul>
+<li>canvas-ba feltöltött kódok</li>
+<li>pendrive-on hozott segédanyag<br />
+</li>
+<li>Java API dokumentáció</li>
+</ul></li>
+</ul>
+<h4 id="az-elkészítendő-megoldásról">Az elkészítendő megoldásról:</h4>
+<ul>
+<li>A kettesért az alapfeladatot kell megoldani, minden további jegyért egy választható feladatot kell megoldani.</li>
+<li>A választható feladat megoldásához az alapfeladatot kell bővíteni. Ehhez másold át az alapfeladat megoldását a megfelelő csomagba (pl. az <code>alapfeladat</code> csomagból a <code>feladatA</code> csomagba), és alakítsd át/bővítsd a megoldást a leírás szerint.</li>
+</ul>
+<p>A ZH során egy szókitaláló játékot kell készíteni. A szerver által eltárolt szót kell a klienseknek betűnként kitalálnia. A kitalált betű minden előfordulása kitalálttá válik. Az összes kliens ugyanazt a szót próbálja kitalálni, együttműködnek a szó megfejtésében. Ha az egyik kitalált belőle valamilyen betűt, azt a másiknak már nem kell újra kitalálnia.</p>
+<h4 id="beadás">Beadás:</h4>
+<p>A ZH végén az elkészített forráskódokat a megfelelő csomagszerkezetben, zip-be tömörítve töltsd fel a Canvas-ba!</p>
+<h4 id="tesztelés">Tesztelés:</h4>
+<p>Az alapfeladathoz (elégséges szint) elérhető két tesztfájl és minta kimenet. Parancssorból a futtatás a lefordított osztályokat tartalmazó legkülső csomag mappájának gyökerében állva a következő:</p>
+<ul>
+<li>Windows: <code>java -cp .;TesztNyertes.jar alapfeladat.TesztNyertes</code><br />
+<code>java -cp .;TesztVesztes.jar alapfeladat.TesztVesztes</code></li>
+</ul>
+<p>Nyertes játékmenethez tartozik a <code>TesztNyertes.jar</code>, a hozzá tartozó minta kimenet a <code>nyertes.txt</code>. Ekkor a játékos megnyeri a játszmát. Vesztes játékmenethez tartozik a <code>TesztVesztes.jar</code>, a hozzá tartozó minta kimenet a <code>vesztes.txt</code>. Ekkor a játékos elveszti a játékot.</p>
+<p>Akkor fog jól működni a tesztelő, ha a csomag - és osztálynevek a leírásnak pontosan megfelelnek.</p>
+<h2 id="elégséges-szerver-távoli-metódushívással">Elégséges: Szerver távoli metódushívással</h2>
+<p>A fájlokat az <code>alapfeladat</code> csomagba tedd!</p>
+<h3 id="szerver-akasztofaszerver.java">Szerver: (<code>AkasztofaSzerver.java</code>)</h3>
+<p>Készítes egy <code>AkasztofaSzerver</code> távoli objektumot, ami parancssori paraméterként egy szót vár, ezt kell kitalálnia a játékosoknak. A megadott szó csak az angol ábécé kisbetűit tartalmazhatja. Feltehető, hogy a szó helyes, nem kell ellenőrizni. Jegyezd be a távoli objektumot <code>9999</code> porton futó registry-be <code>akasztofa</code> néven, az interface neve legyen <code>AkasztofaInterface</code>.</p>
+<p>A következő távolról hívható metódusa legyen:</p>
+<ul>
+<li><p><code>String jatszik(String nev, char betu)</code>: Paraméterekként a kliens megadja a nevét és az általa tippelt betűt. A távoli objektum a következő szabályok szerint állapítja meg a választ:</p>
+<ul>
+<li>Ha a szerver által tárolt szó tartalmazza a tippelt betűt, akkor visszaküldi a <code>&quot;TALALAT&quot;</code> üzenetet és a szó jelenlegi állapotát (a kitalált betűk minden előfordulásán a megfelelő betű áll, a ki nem találtak helyén pedig <code>?</code>) szóközzel elválasztva.</li>
+<li>Ha nem tartalmazza a klienstől kapott betűt, akkor a szerver a <code>&quot;NEM_TALALT&quot;</code> üzenetet és a szó jelenlegi állapotát (a kitalált betűk minden előfordulásán a megfelelő betű áll, a ki nem találtak helyén pedig <code>?</code>) szóközzel elválasztva.<br />
+A szerver minden alkalommal írja ki a játékos nevét, a kapott betűt, a szerver által küldött választ és a szó aktuális állapotát szóközökkel elválasztva a következő alakban: <code>Szerver: &lt;Játékos&gt; &lt;Betű&gt; &lt;Válasz&gt; &lt;Szó&gt;</code><br />
+Ügyelj a párhuzamos hozzáférésből eredő hibákra!</li>
+</ul></li>
+</ul>
+<p>Pl.:</p>
+<pre><code>Szerver: Jatekos1 j NEM_TALALT ???????????
+Szerver: Jatekos1 r TALALAT ??r????????
+Szerver: Jatekos2 f TALALAT ??r??????f?
+Szerver: Jatekos1 y TALALAT ??r?????yf?
+Szerver: Jatekos2 g NEM_TALALT ??r?????yf?
+Szerver: Jatekos2 n TALALAT ??r????nyf?
+Szerver: Jatekos1 a TALALAT ?ara???nyfa
+...
+Szerver: Jatekos1 c TALALAT karacsonyfa</code></pre>
+<h2 id="hármas-kliens-akasztofakliens.java">Hármas: kliens (<code>AkasztofaKliens.java</code>)</h2>
+<p>Az <code>AkasztofaKliens</code> csatlakozzon a <code>9999</code> porton bejegyzett <code>akasztofa</code> távoli objektumhoz! A kliens parancssori paraméterként vár egy nevet, és egy egész számot. Az utóbbi adja meg, hogy hány alkalommal tippelhet hibásan.<br />
+Miután csatlakozott a távoli objektumhoz, elkezdődik a játék. A kliens minden körben küldjön el egy betűt az angol ábécéből és a nevét a szervernek a távoli objektum jatszik() metódusának meghívásával. Minden körben véletlenszerűen sorsolja ki, hogy a melyik betűt küldi el. Hogy a tesztprogrammal azonosan működjön, a <code>rand.nextInt(26);</code> paranccsal sorsoljunk egy <code>0-25</code> közötti számot, ami a betű abc-ben elfoglalt sorszáma <code>0</code>-val kezdve a sorszámozást. Egy betűt csak egyszer küldjön el, tehát ha a kisorsolt sorszámú betű már szerepelt, generáljunk egy új random számot, stb.</p>
+<p><em>Tipp:</em> az ábécé betűit a következő módon tárolhatjuk: <code>char[] abc = &quot;abcdefghijklmnopqrstuvwxyz&quot;.toCharArray();</code>. A véletlen számok generálásához a Random típusú változónak határozd meg a seed-jét <code>55555</code>-re. Pl.: <code>Random rand = new Random(55555)</code>.</p>
+<p>Minden tipp után írja ki a képernyőre a nevét, az elküldött betűt, a kapott választ, és a szó aktuális állapotát és az eddigi hibák számát a következő alakban: <code>&lt;Név&gt;: &lt;Betű&gt; &lt;Eredmény&gt; &lt;Szó&gt; &lt;Hibák száma&gt;</code>. A kliens minden tipp elküldése után várakozzon 1 mp-et. Ha kitalálta a szót (azaz a visszakapott szó nem tartalmaz kérdőjelet), vagy pedig annyiszor kapott <code>NEM_TALALT</code> választ, mint a parancssori paraméterként kapott szám, akkor álljon le. Leállás előtt írja ki, hogy <code>&lt;név&gt; nyert.</code> vagy <code>&lt;név&gt; vesztett.</code>, attól függően, hogy nyert vagy vesztett a játékos.</p>
+<p>Készíts egy <code>Jatek</code> osztályt, ami elindít egy szervert és három klienst külön szálon. Minden szál elindítása után várjon fél mp-et. A szerver paramétere <code>input.txt</code> legyen, a játékosoké pedig:</p>
+<ul>
+<li><code>Jatekos1</code> és <code>10</code><br />
+</li>
+<li><code>Jatekos2</code> és <code>7</code><br />
+</li>
+<li><code>Jatekos3</code> és <code>8</code></li>
+</ul>
+<p>Várd meg, amíg a játékosokat futtató szálak befejeződnek (a szerverét nem kell megvárni), majd írd ki azt, hogy <code>Véget ért a játék.</code>.</p>
+<h2 id="a-socketek">A: Socketek</h2>
+<p>Alakítsd át az <code>AkasztofaSzerver</code> osztályt, hogy távoli objektum mellett socket szerverként is működjön az <code>12201</code> porton. A szerver és a kliens szövegesen kommuinkálnak egymással.<br />
+Minden csatlakozó kliensnek indítson egy külön szálat, majd várakozzon a következő kliens csatlakozására.</p>
+<ul>
+<li><p>A klienstől első lépésben megkapja a nevét.</p></li>
+<li><p>Minden körben fogadja a kliens által küldött betűt és járjon el az alapfeladatban leírtak szerint. A választ küldje el a kliensnek.</p></li>
+<li><p>Ha a klienstől a <code>VESZTETTEM</code> vagy <code>NYERTEM</code> üzenetet kapja, akkor a játékmenet véget ér, álljon le az a szál.</p></li>
+<li><p>Mindegyik játékos ugyanazt a szót próbálja meg kitalálni és együttműködnek a kitalálásban, ugyanúgy, mint az alapfeladatban.</p></li>
+</ul>
+<p>Készíts egy <code>SocketKliens</code> osztályt, amely az <code>12201</code> porton futó szerverhez csatlakozzon. Csatlakozás után küldje el a nevét. Minden körben sorsoljon egy betűt, amit küldjön el a szervernek és fogadja a választ az alapfeladatnak megfelelően. Ha kitalálta a szót, küldje el a szervernek a <code>NYERTEM</code> üzenetet, ha viszont túl sokat hibázott, a <code>VESZTETTEM</code> üzenetet, majd álljon le.</p>
+<h2 id="b-szerializáció">B: Szerializáció</h2>
+<p>Az alapfeladat kódját másold át a <code>feladatC</code> csomagba és a C feladat megoldását is ebbe a csomagba készítsd el!</p>
+<p>A kliens oldalon a játékos minden tippje után szerializálva írjuk ki egy fájlba azokat az adatokat, amelyek segítségével egy esetleges váratlan leállás után folytatható lenne a játék a kliens számára (minimálisan: kliens neve, a kitalálandó szó aktuális állapota, maximális hibázási lehetőség, eddigi hibaszám). A fájl neve legyen a játékos neve. A fájlt minden lépés után írjuk felül az aktuális állapottal.</p>
+<p>A játékos egy játék indulásakor keresse meg a neve alapján a hozzá tartozó fájlt. Ha nem létezik, vagy ha az olvasható ki belőle, hogy szabályosan fejeződött be az előző játék (a kitalálandó szóban nincs kérdőjel vagy a max hibaszám = eddigi hibaszám), akkor a szokásos módon menjen le a játékmenet a megadott parancssori argumentumokat figyelembe véve. Ha pedig létezik a fájl, de egy nem befejezett játék adatait tartalmazza, akkor olvassuk be a fájlban lévő játékállapotot, és folytatódjon onnan a játék, amit utoljára mentettük a fájlba.</p>
+<h2 id="c-adatbázis">C: Adatbázis</h2>
+<p>Az alapfeladat kódját másold át a <code>feladatD</code> csomagba és a D feladat megoldását is ebbe a csomagba készítsd el!</p>
+<p>Minden kliens vezesse egy adatbázisban a tippjeit és a kitalálandó szó aktuális állapotát. A tábla a kővetkező mezőket tartalmazza: <code>TIPP</code> <code>SZO</code>. Minden kliens külön táblát használjon, de használhatják ugyanazt az adatbázist. A tábla neve legyen a játékos neve.</p>
+<p>A játszma végén a táblát használva számolja meg, hány tippből találta ki a szót. Ha nem találta ki, akkor is írja ki a tippek számát. Az eredményt írja ki a képernyőre a következő formában: <code>Tippek száma: &lt;szám&gt;</code>. Az adatbázisműveleteket tedd szinkronizálttá!</p>
+</body>
+</html>

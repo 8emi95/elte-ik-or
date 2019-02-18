@@ -1,0 +1,86 @@
+2016.05.17. 12:00-16:00
+Feltételek
+
+A ZH megoldása során tilos más ember segítségét bármilyen módon kérni, vagy vele együttműködni. Pl. mobiltelefon használata tilos.
+Használható eszközök: írott, nyomtatott anyagok, Internet (keresésre).
+Pendrive-ról, levelezőprogramból a ZH megkezdése előtt le lehet tölteni tartalmakat, de ezek használata ZH közben tilos.
+Az elkészítendő megoldásról
+
+A kettesért az alapfeladatot kell megoldani, minden további jegyért egy választható feladatot kell megoldani.
+A választható feladat megoldásához az alapfeladatot kell bővíteni. Ehhez másold át az alapfeladat megoldását a megfelelő csomagba (pl. a zh20160517_12.alapfeladat csomagból a zh20160517_12.feladatA csomagba), és alakítsd át/bővítsd a megoldást a leírás szerint.
+Az ötös eléréséhez három választható feladatot kell megoldani.
+Az alapfeladathoz itt érhető el példafájl.
+Beadás
+
+Amikor idáig értél az olvasásban, nyisd meg ezt a linket.
+Hajtsd végre az itt szereplő lépéseket. Ekkor elindul egy program, amely automatikusan beküldi a készülő megoldás forráskódját.
+A ZH végén a megoldást töltsd is fel a BE-AD rendszerbe.
+Elégséges: kliens-szerver
+Készíts egyszerű játékot az alábbiak szerint.
+
+Készítsd el a zh20160517_12.alapfeladat.JatekSzerver osztályt, amely tartalmazzon főprogramot.
+
+A JatekSzerver kapjon három parancssori paramétert: egy portszámot, egy számot (n) és egy fájlnevet.
+A program készítése során feltehető, hogy az adatok érvényesek és értelmesek, pl. a szám értéke legalább 2, és minden résztvevő az elvárt módon kommunikál; külön ellenőrzésekre nincsen szükség.
+A szerver tárolja a nyereménykassza értékét. Ez kezdetben 1024 Ft, és minden kör végén megduplázódik az értéke. Mivel a nyeremények nagyon nagyok is lehetnek, long tárolást használj.
+Amikor a főprogramja elindul, várjon be n klienst a megadott porton. Ezután kezdje meg az alábbi játékot.
+Kezdetben mindegyik játékos kapja meg egy sorban a játékosok számát.
+Egy kör a következőképpen zajlik.
+A szerver olvassa fel a következő kérdés adatait a megadott nevű fájlból.
+Egy sor tartalmazza a kérdést.
+A következő négy sor tartalmazza a válaszokat.
+A következő sor egy számot tartalmaz, amelynek értéke 1, 2, 3 vagy 4, ez a helyes válasz sorszáma.
+Ha már nincsen több kérdés a fájlban (elfogytak a sorok), akkor a játék érjen véget. Ennek működését lásd lent.
+A szerver küldje el a kérdés szövegét az összes játékban levő játékosnak (a sor elején szerepeljen "kerdes:"), valamint a válaszlehetőségeket is megsorszámozva.
+Mindegyik kliens elküldi egy sorban a szerinte helyes válasz sorszámát. Ezeket a szerver sorban fogadja. Érdemes rögtön azt is eltárolni, hogy összesen hányan adtak helyes választ.
+A játék az alábbi feltételek szerint folytatódhat.
+Azok, akik helytelen választ adtak, kapják meg a "Vesztettel." üzenetet, és a szerver bontsa velük a kapcsolatot. Velük a szerver ne próbáljon a továbbiakban kommunikálni.
+A helyes választ adó kliensek kapják meg a "Sikeres tipp, a nyeremenykassza XXX Ft.".
+Ha mindegyik játékos kiesett, a program lépjen ki.
+A játék végén minden megmaradt játékos kapja meg a "Gyoztel, nyeremenyed XXX Ft." üzenetet, ahol az XXX értéke a nyereménykassza összege leosztva a győztesek számával. Ezután a szerver mindenkivel bontja a kapcsolatot, és kilép.
+Készítsd el a zh20160517_12.alapfeladat.JatekKliens2 programot, amely kapcsolódjon a szerverhez.
+
+A kliens megkaphatja a szerver portszámát parancssori paraméterként, az alábbiakban akkor a "nem kapott" úgy értendő, hogy ezen kívül.
+Ha a kliens nem kapott parancssori paramétert, a sztenderd bemenetről vegye az elküldendő válaszokat.
+Ha a kliens kapott parancssori paramétereket, azokat küldje el sorban a szervernek.
+Ilyen esetben a kliens a sor elején található "kerdes:" szövegből ismeri fel, hogy kérdést kapott, ilyenkor olvassa ki a válaszlehetőséget, majd rögtön küldje el a következő parancssori paramétert.
+Feltehető, hogy a program kap elég parancssori paramétert.
+A: Párhuzamosság
+A szerver kódját másold át a zh20160517_12.feladatA.JatekSzerver osztályba, és alakítsd át a következőképpen.
+
+A szerver ne sorban olvassa be a játékosok tippjeit: mindenkitől várjon egy tippet, de most a sorrend is számít.
+Amikor az első helyes tipp beérkezik, az azt elküldő játékosnak kell küldenie egy extra sort is, amelyben egy szám szerepel: egy játékos sorszáma (jat).
+Ha jat már kiesett, nincsen teendő.
+Különben jat kapjon 100 Ft extra nyereményt. A játék végén, ha jat a győztesek között van, ennyivel több pénzt kap; ha a játék vége előtt veszít, nem kap semmit.
+Ehhez a feladathoz nem szükséges külön klienst készíteni.
+
+B: Távoli metódushívás
+A megoldás fájljait a zh20160517_12.feladatB könyvtárba készítsd el.
+
+Készíts távoli objektumot, amelyet jegyezz be gyoztesek néven a programon kívülről, az alapértelmezett porton elindított névszolgáltatásba. Ezen legyenek elérhetőek az alábbi műveletek.
+
+nyert: egy játékos nevét várja és egy összeget; eltárolja, hogy a játékos győzött, és megnöveli az eltárolt össznyereményét az összeggel
+Ezt a szerver hívja meg, amikor a játékos győz. (Több győztes esetén mindegyikre.)
+mennyitNyert: egy játékos nevét várja, és visszaadja az eddigi összes nyereményét
+Adjon vissza nullát, ha a játékos ismeretlen.
+hanyszorGyozott: egy játékos nevét várja, és visszaadja, eddig hanyszor gyozott
+Adjon vissza nullát, ha a játékos ismeretlen.
+A kliens induláskor kérje le az eddigi össznyereményét, és írja ki a sztenderd kimenetére.
+
+C: Szerializáció
+A megoldás fájljait a zh20160517_12.feladatC könyvtárba készítsd el.
+
+A szerver induláskor töltse be a kerdesek.dat fájl tartalmát, ha a fájl létezik. Ebbe szerializálva kerüljön bele olyan tartalom, amely lehetővé teszi az alábbiakat.
+
+A szerver, amikor a következő kérdést teszi fel, írja ki a sztenderd kimenetére, hogy Uj kerdes. vagy Ismert kerdes., attól függően, hogy a kerdesek.dat fájlban szerepel-e a kérdés.
+Ha igen, a fájlban az is szerepel, hogy melyik választ hányszor kapta meg a szerver. Ez is kerüljön ki a sztenderd kimenetre.
+A fájl tartalmát a szerver írja felül mindegyik kör végén. (Akkor is, amikor a játék éppen véget ért.)
+Az új/ismert kérdésekről az információt azonban végig az eredeti (játék megkezdésekori) fájltartalom szerint írja ki. Ehhez érdemes egy külön változót felvenni.
+D: Adatbáziskezelés
+A megoldás fájljait a zh20160517_12.feladatD könyvtárba készítsd el.
+
+A kliensek jegyezzék meg a kapott kérdéseket és az arra adott tippjeiket a következőképpen, adatbázis segítségével.
+
+Ha a kliens sikeresen tippelt, akkor jegyezze meg, hogy ez a helyes válasz, és a következőkben mindig ezt adja erre a kérdésre.
+Ha a kliens rossz választ adott, akkor jegyezze meg, hogy ez rossz válasz, és ha újra megkapja a kérdést, de még nem tudja a helyes választ, akkor ezt a választ biztosan ne adja.
+A kliensek technikailag használhatják ugyanazt az adatbázist, de külön táblákkal dolgozzanak.

@@ -1,0 +1,32 @@
+water Gardener1_4: 4
+water Gardener2_4: 4
+buy Customer1_4: 41 Iris
+buy Customer2_4: 42 Walnut
+buy Customer3_4: 44 Freesia
+buy Customer2_4: 45 Raspberry
+buy Customer1_4: fail
+buy Customer4_4: fail
+buy Customer2_4: fail
+water Gardener1_4: 0
+buy Customer2_4: fail
+buy Customer1_4: fail
+buy Customer2_4: fail
+buy Customer3_4: fail
+quit Customer2_4: 
+water Gardener2_4: 0
+buy Customer1_4: fail
+buy Customer4_4: fail
+quit Customer1_4: 
+water Gardener1_4: 0
+buy Customer3_4: fail
+buy Customer4_4: fail
+water Gardener2_4: 0
+water Gardener1_4: 0
+buy Customer3_4: fail
+quit Customer4_4: 
+quit Customer3_4: 
+quit Gardener1_4: 
+water Gardener2_4: 0
+quit Gardener2_4: 
+Eladott novenyek szama: 4, bevetel: 6274
+Veszteseg: 1 db, osszeg: 2252

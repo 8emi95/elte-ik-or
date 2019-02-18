@@ -1,0 +1,65 @@
+C - SZAKIRÁNY 36 kérdés kb, ha vki ezeket kidolgozza és megtanulja, akkor tutira átmegy :D ('14 tavaszi és '15 januári vizsgakérdésekbõl gyûjtöttem) össze
+Érdemes figyelni arra hogy a tanár sokszor 1 kérdést más megfogalmazásban tesz fel. 
+Egyébként egy .jar fájlt kell letölteni vizsgán azt elindítani és az randomol kérdéseket, mindenkinek mást és mást. 10 kérdés 40 pont abból kell 20, minden kérdés 4 pont.
+Ha vki nagy huligán akar lenni akkor meg emelje le a .jar fájlt :D
+
+				Berkeley-agoritmus;
+				- Cristian algorimus
+				mi a  továbbítómutató;
+ 
+				DNS melyik rétegek van és azok közt mi köztük a különbség;
+				mely rétegbe soroltuk a dns-t és 3 jellemzõ megadása amiben eltérnek // sztem ez a kettõ ugyanaz akarna lenni
+							
+hatékony megbízható mód csoportos kommunikációra lokális hálózaton;
+
+RPC mûveletei --> másképp fogalmazva, szinkron és aszinkron komm hogyan zajlik
+
+hivatkozásszámlálásnak vmi továbbfejlesztett változat
+
+decentralizált algoritmus tulajdonságai
+
+kódáthelyezésnél vmi gyenge és erõs akármicsoda - vagy vmi ehhez hasonló :D
+
+				példa elsõdleges másolaton alapuló protokollra;
+
+				kódáthelyezés esetén hozzáférés az erõforrásokhoz; 
+							
+				szuperver és DCE démon közötti különbség és hasonlóság; 
+							
+				kliensek hogy tudnak komminukálni a MOM-al // MOM = üzenetsoros dolog
+
+				- Mit jelent az x.500? (ldap)
+	
+				- Mit jelent az átméretezhetõségi probélma elosztott rendszereknél?	
+				milyen fajta átmértezhetõségi problémák léphetnek fel elosztott rendszerekben?
+
+				- késleltetett szinkronizált RPC 
+				Mi a folyam? mi az összetett folyam?
+
+				folyam vs folyamat 
+				mi a 3-as moduláris redundancia?
+egy vezetõ választó algoritmus
+							
+				kétirányú végtelenítés	- az ink kétfázisú lenne.... 
+
+				zsetontartály
+				mi a hálózati oprendszer 
+				mi a diszpécserszál
+				miért jobb a folyamat mint a szál?
+
+				mi a testület alapú protokoll? 
+				mi a szuperszerver 
+
+példa megadása olyan problémra az elosztott szemétgyûjtésnél ami egygépes esetben nem fordul elõ
+
+				mi az iso/osi ref modell alsó 4 rétege és mi az egyes rétegek feladata?
+				mi a rekurzív és iteratív névfeloldás
+				mi az egyszerû hivatkozás számlálás?
+
+				ismertess 1 kölcsönös kizárást biztosító alg.-t!
+
+				mibõl áll egy elosztott rendszer globális állapota? hogy lehet meghat.?
+				hogyan lehet az acid a tul.-ait megvalósítani?
+
+				mi az okozati és a fifo konzisztencia között a különbség ?
+többgépes kölcsönös kizárásnál milyen probléma/problémák merülhetnek fel?

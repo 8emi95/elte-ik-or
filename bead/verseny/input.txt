@@ -1,0 +1,7 @@
+6
+eagle;20;SAVE;dog,cat
+dog;15;CATCH;
+cat;8;CATCH;mouse
+mouse;6;SAVE;
+cheetah;200;SAVE;
+turtle;1;SAVE;
